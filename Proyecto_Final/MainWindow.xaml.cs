@@ -27,9 +27,9 @@ namespace Proyecto_Final
 
         private void btnAcceder_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             GestionClientes subWindow = new GestionClientes();
             subWindow.Show();
+            this.Close();
         }
     }
 }

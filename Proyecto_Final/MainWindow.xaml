@@ -8,15 +8,14 @@
         Title="MainWindow" Height="450" Width="800"
         ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png"/>
+        <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
         <Label Content="DNI" HorizontalAlignment="Left" Margin="263,188,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="245,235,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <TextBox HorizontalAlignment="Center" Margin="0,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="24" VerticalContentAlignment="Center"/>
         <PasswordBox HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" Width="110" Height="24" VerticalContentAlignment="Center"/>
-        <Label Content="LOGIN" HorizontalAlignment="Center" Margin="0,102,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
+        <Label Content="LOGIN" HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
         <Button x:Name="btnAcceder" Content="Acceder" HorizontalAlignment="Center" Margin="0,305,0,0" VerticalAlignment="Top" Height="26" Width="110" Click="btnAcceder_Click"/>
-
     </Grid>
 </Window>

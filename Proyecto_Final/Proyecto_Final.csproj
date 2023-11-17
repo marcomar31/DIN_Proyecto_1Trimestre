@@ -67,6 +67,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Modelo\EstadoViaje.cs" />
+    <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="GestionClientes.xaml.cs">
       <DependentUpon>GestionClientes.xaml</DependentUpon>
     </Compile>

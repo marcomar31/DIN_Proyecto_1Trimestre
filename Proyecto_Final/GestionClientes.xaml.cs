@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Proyecto_Final.Modelo;
 
 namespace Proyecto_Final
 {
@@ -19,9 +9,22 @@ namespace Proyecto_Final
     /// </summary>
     public partial class GestionClientes : Window
     {
+        public List<Cliente> ListaClientes { get; set; }
+
         public GestionClientes()
         {
             InitializeComponent();
+            ListaClientes = ObtenerListaClientes();
+            lvClientes.ItemsSource = ListaClientes;
+        }
+
+        private List<Cliente> ObtenerListaClientes()
+        {
+            return new List<Cliente>
+        {
+            new Cliente("Juan", "Pérez", "Cuadrado", EstadoViaje.Abierto, true),
+            new Cliente("María", "Gómez", "Núñez", EstadoViaje.Cerrado, true),
+        };
         }
     }
 }

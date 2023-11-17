@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
         Title="GestionClientes" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
+    </Window.Background>
     <Grid>
-        
+        <ListView x:Name="lvClientes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="35,35,271,137">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" Width="100"/>
+                    <GridViewColumn Header="Primer Apellido" DisplayMemberBinding="{Binding apellido1}" Width="120"/>
+                    <GridViewColumn Header="Segundo Apellido" DisplayMemberBinding="{Binding apellido2}" Width="120"/>
+                    <GridViewColumn Header="Estado Viaje" DisplayMemberBinding="{Binding estadoViaje}" Width="140"/>
+                    <GridViewColumn Header="Dado de alta" DisplayMemberBinding="{Binding dadoAlta}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
