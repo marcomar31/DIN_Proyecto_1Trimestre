@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="GestionClientes" Height="450" Width="800">
+        Title="GestionClientes" Height="450" Width="800"
+        ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
-        <ListView x:Name="lvClientes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="35,35,271,137">
+        <ListView x:Name="lvClientes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="35,35,271,117">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" Width="100"/>
@@ -21,5 +22,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="btnAniadirCliente" Content="Añadir cliente" HorizontalAlignment="Left" Margin="35,345,0,0" VerticalAlignment="Top" Height="34" Width="121" Click="btnAniadirCliente_Click"/>
+        <Button x:Name="btnEditarCliente" Content="Editar cliente" HorizontalAlignment="Left" Margin="222,345,0,0" VerticalAlignment="Top" Height="34" Width="120"/>
+        <Button x:Name="btnEliminarCliente" Content="Eliminar cliente" HorizontalAlignment="Left" Margin="409,345,0,0" VerticalAlignment="Top" Height="34" Width="120"/>
     </Grid>
 </Window>

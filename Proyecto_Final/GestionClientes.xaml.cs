@@ -9,13 +9,13 @@ namespace Proyecto_Final
     /// </summary>
     public partial class GestionClientes : Window
     {
-        public List<Cliente> ListaClientes { get; set; }
+        public List<Cliente> listaClientes { get; set; }
 
         public GestionClientes()
         {
             InitializeComponent();
-            ListaClientes = ObtenerListaClientes();
-            lvClientes.ItemsSource = ListaClientes;
+            listaClientes = ObtenerListaClientes();
+            lvClientes.ItemsSource = listaClientes;
         }
 
         private List<Cliente> ObtenerListaClientes()
@@ -25,6 +25,17 @@ namespace Proyecto_Final
             new Cliente("Juan", "Pérez", "Cuadrado", EstadoViaje.Abierto, true),
             new Cliente("María", "Gómez", "Núñez", EstadoViaje.Cerrado, true),
         };
+        }
+
+        private void btnAniadirCliente_Click(object sender, RoutedEventArgs e)
+        {
+            AgregarClienteWindow ventanaAgregarCliente = new AgregarClienteWindow();
+            ventanaAgregarCliente.ShowDialog();
+            Cliente nuevoCliente = ventanaAgregarCliente.nevoCliente;
+            if (nuevoCliente != null)
+            {
+                listaClientes.Add(nuevoCliente);
+            }
         }
     }
 }
