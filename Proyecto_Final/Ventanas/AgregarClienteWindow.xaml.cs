@@ -20,7 +20,7 @@ namespace Proyecto_Final
     public partial class AgregarClienteWindow : Window
     {
         // Propiedad pública para almacenar el cliente
-        public Cliente nevoCliente { get; private set; }
+        public Cliente NuevoCliente { get; private set; }
 
         public AgregarClienteWindow()
         {
@@ -29,14 +29,15 @@ namespace Proyecto_Final
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            nevoCliente = new Cliente(
-                txtNombre.Text,
-                txtApellido1.Text,
-                txtApellido2.Text,
-                cbEstadoViaje,
-                // Agrega más propiedades según tus necesidades
-            );*/
+            NuevoCliente = new Cliente(
+                tbDni.Text,
+                tbNombre.Text,
+                tbApellido1.Text,
+                tbApellido2.Text,
+                tbEmail.Text,
+                Enumerados.EstadoViaje.Abierto,
+                checkbxDadoAlta.IsChecked ?? false
+            );
             Close();
         }
     }

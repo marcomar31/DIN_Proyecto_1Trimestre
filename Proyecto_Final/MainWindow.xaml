@@ -10,12 +10,17 @@
     <Window.Background>
         <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
     </Window.Background>
-    <Grid>
-        <Label Content="DNI" HorizontalAlignment="Left" Margin="263,188,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="245,235,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="24" VerticalContentAlignment="Center"/>
-        <PasswordBox HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" Width="110" Height="24" VerticalContentAlignment="Center"/>
-        <Label Content="LOGIN" HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
-        <Button x:Name="btnAcceder" Content="Acceder" HorizontalAlignment="Center" Margin="0,305,0,0" VerticalAlignment="Top" Height="26" Width="110" Click="btnAcceder_Click"/>
+    <Grid Margin="251,63,251,28">
+        <Image HorizontalAlignment="Center" Height="318" VerticalAlignment="Center" Width="279" Source="/FondoLogin.png"/>
+        <Label Content="DNI" HorizontalAlignment="Center" Margin="-152,-126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Contraseña" HorizontalAlignment="Center" Margin="-100,36,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="0,-66,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="188" Height="37" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="passwdboxContrasenia" HorizontalAlignment="Center" Margin="0,94,0,0" VerticalAlignment="Center" Width="188" Height="37" VerticalContentAlignment="Center"/>
+        <Label Content="LOGIN" HorizontalAlignment="Center" Margin="0,-220,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="48" Foreground="#FFE4714C"/>
+        <Button x:Name="btnAcceder" Content="Acceder" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Center" Height="40" Width="156" Click="btnAcceder_Click" Background="#FFE4714C" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Center" FontSize="9" FontWeight="Bold" Width="188" Height="29">
+            NOTA: Debido a que la aplicación se encuentra en <LineBreak/>
+            fase de prueba a contaseña es: 1234
+        </TextBlock>
     </Grid>
 </Window>

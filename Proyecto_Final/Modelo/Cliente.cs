@@ -1,22 +1,124 @@
 ﻿using System;
-using Proyecto_Final.Modelo;
+using System.ComponentModel;
 
 namespace Proyecto_Final
 {
-    public class Cliente
+    public class Cliente : INotifyPropertyChanged
     {
-        public String nombre { get; set; }
-        public String apellido1 { get; set; }
-        public String apellido2 { get; set; }
-        public EstadoViaje estadoViaje { get; set; }
-        public bool dadoAlta { get; set; }
-        public Cliente(string nombre, string apellido1, string apellido2, EstadoViaje estadoViaje, bool dadoAlta)
+        private string _dni;
+        public string Dni
         {
-            this.nombre = nombre;
-            this.apellido1 = apellido1;
-            this.apellido2 = apellido2;
-            this.estadoViaje = estadoViaje;
-            this.dadoAlta = dadoAlta;
+            get { return _dni; }
+            set
+            {
+                if (_dni != value)
+                {
+                    _dni = value;
+                    OnPropertyChanged(nameof(Dni));
+                }
+            }
+        }
+
+        private string _nombre;
+        public string Nombre
+        {
+            get { return _nombre; }
+            set
+            {
+                if (_nombre != value)
+                {
+                    _nombre = value;
+                    OnPropertyChanged(nameof(Nombre));
+                }
+            }
+        }
+
+        private string _apellido1;
+        public string Apellido1
+        {
+            get { return _apellido1; }
+            set
+            {
+                if (_apellido1 != value)
+                {
+                    _apellido1 = value;
+                    OnPropertyChanged(nameof(Apellido1));
+                }
+            }
+        }
+
+        private string _apellido2;
+        public string Apellido2
+        {
+            get { return _apellido2; }
+            set
+            {
+                if (_apellido2 != value)
+                {
+                    _apellido2 = value;
+                    OnPropertyChanged(nameof(Apellido2));
+                }
+            }
+        }
+
+        private string _email;
+        public string Email
+        {
+            get { return _email; }
+            set
+            {
+                if (_email != value)
+                {
+                    _email = value;
+                    OnPropertyChanged(nameof(Email));
+                }
+            }
+        }
+
+        private Enumerados.EstadoViaje _estadoViaje;
+        public Enumerados.EstadoViaje EstadoViaje
+        {
+            get { return _estadoViaje; }
+            set
+            {
+                if (_estadoViaje != value)
+                {
+                    _estadoViaje = value;
+                    OnPropertyChanged(nameof(EstadoViaje));
+                }
+            }
+        }
+
+        private bool _dadoAlta;
+        public bool DadoAlta
+        {
+            get { return _dadoAlta; }
+            set
+            {
+                if (_dadoAlta != value)
+                {
+                    _dadoAlta = value;
+                    OnPropertyChanged(nameof(DadoAlta));
+                }
+            }
+        }
+
+        public Cliente(string dni, string nombre, string apellido1, string apellido2, string email, Enumerados.EstadoViaje estadoViaje, bool dadoAlta)
+        {
+            Dni = dni;
+            Nombre = nombre;
+            Apellido1 = apellido1;
+            Apellido2 = apellido2;
+            Email = email;
+            EstadoViaje = estadoViaje;
+            DadoAlta = dadoAlta;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

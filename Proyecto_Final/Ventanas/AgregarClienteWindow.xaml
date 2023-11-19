@@ -1,0 +1,28 @@
+﻿<Window x:Class="Proyecto_Final.AgregarClienteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_Final"
+        mc:Ignorable="d"
+        Title="AgregarClienteWindow" Height="451" Width="800"
+        ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid Margin="10,10,10,6">
+        <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-7,0,0"/>
+        <Label Content="DNI" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="-443,-221,0,0"/>
+        <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="-311,-163,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnAceptar_Click"/>
+        <Label Content="Nombre" HorizontalAlignment="Center" Margin="-406,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Center" Margin="-311,11,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+        <Label Content="Primer Apellido" HorizontalAlignment="Center" Margin="227,-221,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="tbApellido1" HorizontalAlignment="Center" Margin="262,-163,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+        <Label Content="Segundo Apellido" HorizontalAlignment="Center" Margin="256,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="tbApellido2" HorizontalAlignment="Center" Margin="262,11,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+        <Label Content="Email" HorizontalAlignment="Center" Margin="-430,126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="tbEmail" HorizontalAlignment="Center" Margin="-311,185,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="checkbxDadoAlta" Content="Dar de alta" HorizontalAlignment="Center" Margin="262,185,0,0" VerticalAlignment="Center" Height="36" Width="176" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" IsChecked="True"/>
+    </Grid>
+</Window>
