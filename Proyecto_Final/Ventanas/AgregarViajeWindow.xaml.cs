@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Final.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,26 +18,19 @@ namespace Proyecto_Final
     /// <summary>
     /// Lógica de interacción para AgregarCLienteWindow.xaml
     /// </summary>
-    public partial class AgregarClienteWindow : Window
+    public partial class AgregarViajeWindow : Window
     {
         // Propiedad pública para almacenar el cliente
-        public Cliente NuevoCliente { get; private set; }
+        public Viaje NuevoViaje { get; private set; }
 
-        public AgregarClienteWindow()
+        public AgregarViajeWindow()
         {
             InitializeComponent();
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            NuevoCliente = new Cliente(
-                tbDni.Text,
-                tbNombre.Text,
-                tbApellido1.Text,
-                tbApellido2.Text,
-                tbEmail.Text,
-                checkbxDadoAlta.IsChecked ?? false
-            );
+            
             Close();
         }
     }

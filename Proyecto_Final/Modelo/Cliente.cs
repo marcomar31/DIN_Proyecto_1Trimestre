@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Final.Modelo;
+using System;
 using System.ComponentModel;
 
 namespace Proyecto_Final
@@ -75,16 +76,16 @@ namespace Proyecto_Final
             }
         }
 
-        private Enumerados.EstadoViaje _estadoViaje;
-        public Enumerados.EstadoViaje EstadoViaje
+        private Viaje[] _viajes;
+        public Viaje[] Viajes
         {
-            get { return _estadoViaje; }
+            get { return _viajes; }
             set
             {
-                if (_estadoViaje != value)
+                if (_viajes != value)
                 {
-                    _estadoViaje = value;
-                    OnPropertyChanged(nameof(EstadoViaje));
+                    _viajes = value;
+                    OnPropertyChanged(nameof(Viajes));
                 }
             }
         }
@@ -103,14 +104,14 @@ namespace Proyecto_Final
             }
         }
 
-        public Cliente(string dni, string nombre, string apellido1, string apellido2, string email, Enumerados.EstadoViaje estadoViaje, bool dadoAlta)
+        public Cliente(string dni, string nombre, string apellido1, string apellido2, string email, bool dadoAlta)
         {
             Dni = dni;
             Nombre = nombre;
             Apellido1 = apellido1;
             Apellido2 = apellido2;
             Email = email;
-            EstadoViaje = estadoViaje;
+            Viajes = new Viaje[99];
             DadoAlta = dadoAlta;
         }
 

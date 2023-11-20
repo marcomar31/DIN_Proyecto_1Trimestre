@@ -1,0 +1,31 @@
+﻿<Window x:Class="Proyecto_Final.AgregarViajeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_Final"
+        mc:Ignorable="d"
+        Title="AgregarViajeWindow" Height="451" Width="800"
+        ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Window.Resources>
+        <ObjectDataProvider x:Key="TiposHotelEnum" MethodName="GetValues" ObjectType="{x:Type local:TipoHotel}" xmlns:local="clr-namespace:Proyecto_Final.Enumerados" />
+    </Window.Resources>
+    <Grid Margin="10,10,10,6">
+        <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-7,0,0"/>
+        <Label Content="Orígen" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="-424,-221,0,0"/>
+        <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="-311,-163,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnAceptar_Click"/>
+        <Label Content="Fecha de Ida" HorizontalAlignment="Center" Margin="-378,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <DatePicker HorizontalAlignment="Center" Margin="-311,11,0,0" VerticalAlignment="Center" Width="177"/>
+        <Label Content="Destino" HorizontalAlignment="Center" Margin="156,-221,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="tbApellido1" HorizontalAlignment="Center" Margin="262,-163,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+        <Label Content="Fecha de Vuelta" HorizontalAlignment="Center" Margin="224,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <DatePicker HorizontalAlignment="Center" Margin="262,11,0,0" VerticalAlignment="Center" Width="177"/>
+        <Label Content="Tipo de Hotel" HorizontalAlignment="Center" Margin="-366,126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+        <ComboBox x:Name="combobxTipoHotel" HorizontalAlignment="Center" Margin="-311,185,0,0" VerticalAlignment="Center" Width="176" Height="24"
+          ItemsSource="{Binding Source={StaticResource TiposHotelEnum}}" />
+    </Grid>
+</Window>

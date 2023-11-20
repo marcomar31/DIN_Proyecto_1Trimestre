@@ -20,8 +20,8 @@ namespace Proyecto_Final
         {
             return new List<Cliente>
             {
-                new Cliente("00000000A", "Juan", "Pérez", "Cuadrado", "email@mail.com", EstadoViaje.Abierto, true),
-                new Cliente("00000000A", "María", "Gómez", "Núñez", "email2@mail.com", EstadoViaje.Cerrado, true),
+                new Cliente("00000000A", "Juan", "Pérez", "Cuadrado", "email@mail.com", true),
+                new Cliente("00000000A", "María", "Gómez", "Núñez", "email2@mail.com", true),
             };
         }
 
@@ -59,7 +59,13 @@ namespace Proyecto_Final
 
         private void btnDetallesCliente_Click(object sender, RoutedEventArgs e)
         {
+            Cliente clienteSeleccionado = lvClientes.SelectedItem as Cliente;
 
+            if (clienteSeleccionado != null)
+            {
+                DetallesClienteWindow ventanaEditarCliente = new DetallesClienteWindow(clienteSeleccionado);
+                ventanaEditarCliente.ShowDialog();
+            }
         }
     }
 }
