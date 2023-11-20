@@ -20,12 +20,32 @@ namespace Proyecto_Final
     /// </summary>
     public partial class AgregarViajeWindow : Window
     {
-        // Propiedad pública para almacenar el cliente
         public Viaje NuevoViaje { get; private set; }
 
         public AgregarViajeWindow()
         {
             InitializeComponent();
+            CargarCBoxTipoHotel();
+            CargarCBoxOrigen();
+            CargarCBoxDestino();
+        }
+
+        private void CargarCBoxTipoHotel()
+        {
+            ComboBoxTipoHotel.ItemsSource = Enum.GetValues(typeof(Enumerados.TipoHotel));
+            ComboBoxTipoHotel.SelectedIndex = 0;
+        }
+
+        private void CargarCBoxOrigen()
+        {
+            ComboBoxOrigen.ItemsSource = Enum.GetValues(typeof(Enumerados.Ciudades));
+            ComboBoxOrigen.SelectedIndex = 0;
+        }
+
+        private void CargarCBoxDestino()
+        {
+            ComboBoxDestino.ItemsSource = Enum.GetValues(typeof(Enumerados.Ciudades));
+            ComboBoxDestino.SelectedIndex = 0;
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
@@ -34,5 +54,4 @@ namespace Proyecto_Final
             Close();
         }
     }
-
 }

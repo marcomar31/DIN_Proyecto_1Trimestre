@@ -27,16 +27,47 @@ namespace Proyecto_Final
             InitializeComponent();
         }
 
+        private bool camposRellenos()
+        {
+            if (string.IsNullOrWhiteSpace(tbDni.Text) ||
+                string.IsNullOrWhiteSpace(tbNombre.Text) ||
+                string.IsNullOrWhiteSpace(tbApellido1.Text) ||
+                string.IsNullOrWhiteSpace(tbApellido2.Text) || 
+                string.IsNullOrWhiteSpace(tbEmail.Text)) 
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            NuevoCliente = new Cliente(
-                tbDni.Text,
-                tbNombre.Text,
-                tbApellido1.Text,
-                tbApellido2.Text,
-                tbEmail.Text,
-                checkbxDadoAlta.IsChecked ?? false
-            );
+            if (camposRellenos())
+            {
+                NuevoCliente = new Cliente(
+                    tbDni.Text,
+                    tbNombre.Text,
+                    tbApellido1.Text,
+                    tbApellido2.Text,
+                    tbEmail.Text,
+                    checkbxDadoAlta.IsChecked ?? false
+                );
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Para añadir el cliente deberá rellenar todos los campos", "Warning");
+                return;
+            }
+            
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
             Close();
         }
     }

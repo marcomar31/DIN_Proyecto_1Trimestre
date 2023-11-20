@@ -43,6 +43,9 @@ namespace Proyecto_Final
             if (clienteSeleccionado != null)
             {
                 ListaClientes.Remove(clienteSeleccionado);
+            } else
+            {
+                MessageBox.Show("Para eliminar un cliente, deberá seleccionar el cliente en la tabla", "Warning");
             }
         }
 
@@ -54,6 +57,9 @@ namespace Proyecto_Final
             {
                 EditarClienteWindow ventanaEditarCliente = new EditarClienteWindow(clienteSeleccionado);
                 ventanaEditarCliente.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Para editar un cliente, deberá seleccionar el cliente en la tabla", "Warning");
             }
         }
 
@@ -65,6 +71,9 @@ namespace Proyecto_Final
             {
                 DetallesClienteWindow ventanaEditarCliente = new DetallesClienteWindow(clienteSeleccionado);
                 ventanaEditarCliente.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Para ver los detalles de un cliente, deberá seleccionar el cliente en la tabla", "Warning");
             }
         }
     }

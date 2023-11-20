@@ -18,7 +18,7 @@
         <PasswordBox x:Name="passwdboxContrasenia" HorizontalAlignment="Center" Margin="0,94,0,0" VerticalAlignment="Center" Width="188" Height="37" VerticalContentAlignment="Center"/>
         <Label Content="LOGIN" HorizontalAlignment="Center" Margin="0,-220,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="48" Foreground="#FFE4714C"/>
         <Button x:Name="btnAcceder" Content="Acceder" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Center" Height="40" Width="156" Click="btnAcceder_Click" Background="#FFE4714C" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Center" FontSize="9" FontWeight="Bold" Width="188" Height="29">
+        <TextBlock HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Center" FontSize="8" FontWeight="Bold" Width="188" Height="29">
             NOTA: Debido a que la aplicación se encuentra en <LineBreak/>
             fase de prueba a contaseña es: 1234
         </TextBlock>

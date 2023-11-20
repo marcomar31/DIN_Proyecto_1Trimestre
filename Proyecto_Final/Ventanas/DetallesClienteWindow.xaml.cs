@@ -40,12 +40,7 @@ namespace Proyecto_Final
             return listaDeViajes;
         }
 
-        private void BtnVolver_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void btnAniadirViaje_Click(object sender, RoutedEventArgs e)
+        private void BtnAniadirViaje_Click(object sender, RoutedEventArgs e)
         {
             AgregarViajeWindow ventanaAgregarViaje = new AgregarViajeWindow();
             ventanaAgregarViaje.ShowDialog();
@@ -55,6 +50,10 @@ namespace Proyecto_Final
             {
                 ListaViajes.Add(nuevoViaje);
             }
+        }
+        private void BtnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

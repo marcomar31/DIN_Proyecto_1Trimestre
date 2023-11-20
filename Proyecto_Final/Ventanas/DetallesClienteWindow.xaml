@@ -42,6 +42,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btnAniadirViaje" Content="Añadir viaje" HorizontalAlignment="Left" Margin="506,307,0,0" VerticalAlignment="Top" Width="110" Height="23" Click="btnAniadirViaje_Click"/>
+        <Button x:Name="BtnAniadirViaje" Content="Añadir viaje" HorizontalAlignment="Left" Margin="506,307,0,0" VerticalAlignment="Top" Width="110" Height="23" Click="BtnAniadirViaje_Click"/>
     </Grid>
 </Window>

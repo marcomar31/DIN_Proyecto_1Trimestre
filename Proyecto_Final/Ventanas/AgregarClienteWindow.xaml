@@ -14,7 +14,7 @@
         <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-7,0,0"/>
         <Label Content="DNI" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="-443,-221,0,0"/>
         <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="-311,-163,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-        <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnAceptar_Click"/>
+        <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-200,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnAceptar_Click"/>
         <Label Content="Nombre" HorizontalAlignment="Center" Margin="-406,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
         <TextBox x:Name="tbNombre" HorizontalAlignment="Center" Margin="-311,11,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
         <Label Content="Primer Apellido" HorizontalAlignment="Center" Margin="227,-221,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
@@ -24,5 +24,6 @@
         <Label Content="Email" HorizontalAlignment="Center" Margin="-430,126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
         <TextBox x:Name="tbEmail" HorizontalAlignment="Center" Margin="-311,185,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="checkbxDadoAlta" Content="Dar de alta" HorizontalAlignment="Center" Margin="262,185,0,0" VerticalAlignment="Center" Height="36" Width="176" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" IsChecked="True"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="200,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnVolver_Click"/>
     </Grid>
 </Window>
