@@ -5,19 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        ResizeMode="NoResize">
+        Title="Login" MinWidth="800" MinHeight="450"
+        ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Background>
         <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid Margin="251,63,251,28">
-        <Image HorizontalAlignment="Center" Height="318" VerticalAlignment="Center" Width="279" Source="/FondoLogin.png"/>
+        <Image HorizontalAlignment="Center" Height="318" VerticalAlignment="Center" Source="/FondoLogin.png" Width="278"/>
         <Label Content="DNI" HorizontalAlignment="Center" Margin="-152,-126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
         <Label Content="Contraseña" HorizontalAlignment="Center" Margin="-100,36,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
         <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="0,-66,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="188" Height="37" VerticalContentAlignment="Center"/>
         <PasswordBox x:Name="passwdboxContrasenia" HorizontalAlignment="Center" Margin="0,94,0,0" VerticalAlignment="Center" Width="188" Height="37" VerticalContentAlignment="Center"/>
         <Label Content="LOGIN" HorizontalAlignment="Center" Margin="0,-220,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="48" Foreground="#FFE4714C"/>
-        <Button x:Name="btnAcceder" Content="Acceder" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Center" Height="40" Width="156" Click="btnAcceder_Click" Background="#FFE4714C" Foreground="White"/>
+        <Button x:Name="btnAcceder" Content="Acceder" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Center" Height="40" Width="156" Click="btnAcceder_Click" Background="#FFE4714C" Foreground="White">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                                    <!-- Ajusta el valor de CornerRadius según sea necesario -->
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
         <TextBlock HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Center" FontSize="8" FontWeight="Bold" Width="188" Height="29">
             NOTA: Debido a que la aplicación se encuentra en <LineBreak/>
             fase de prueba a contaseña es: 1234

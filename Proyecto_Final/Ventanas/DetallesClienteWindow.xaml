@@ -34,7 +34,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="276,102,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="82">
+        <ListView x:Name="ListViewViajes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="276,102,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="82">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Orígen" DisplayMemberBinding="{Binding Origen}" Width="96"/>
@@ -42,6 +42,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="BtnAniadirViaje" Content="Añadir viaje" HorizontalAlignment="Left" Margin="506,307,0,0" VerticalAlignment="Top" Width="110" Height="23" Click="BtnAniadirViaje_Click"/>
+        <Button x:Name="BtnAniadirViaje" Content="Añadir viaje" HorizontalAlignment="Center" Margin="167,222,0,0" VerticalAlignment="Center" Width="100" Height="23" Click="BtnAniadirViaje_Click"/>
+        <Button x:Name="BtnEliminarViaje" Content="Eliminar viaje" HorizontalAlignment="Center" Margin="386,222,0,0" VerticalAlignment="Center" Width="100" Height="23" Click="BtnEliminarViaje_Click"/>
     </Grid>
 </Window>

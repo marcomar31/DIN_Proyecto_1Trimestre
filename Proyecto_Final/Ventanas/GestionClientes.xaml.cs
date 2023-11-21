@@ -1,4 +1,6 @@
 ﻿using Proyecto_Final.Enumerados;
+using Proyecto_Final.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -14,6 +16,10 @@ namespace Proyecto_Final
             InitializeComponent();
             ListaClientes = new ObservableCollection<Cliente>(ObtenerListaClientes());
             lvClientes.ItemsSource = ListaClientes;
+            foreach (Cliente Cliente in ListaClientes)
+            {
+                Cliente.Viajes.Add(new Viaje(Ciudades.Madrid, Ciudades.Roma, DateTime.Now.AddDays(4), DateTime.Now.AddDays(11), TipoHotel.Premium, TipoTransporte.Avion, EstadoViaje.Abierto));
+            }
         }
 
         private List<Cliente> ObtenerListaClientes()
@@ -21,7 +27,7 @@ namespace Proyecto_Final
             return new List<Cliente>
             {
                 new Cliente("00000000A", "Juan", "Pérez", "Cuadrado", "email@mail.com", true),
-                new Cliente("00000000A", "María", "Gómez", "Núñez", "email2@mail.com", true),
+                new Cliente("00000001B", "María", "Gómez", "Núñez", "email2@mail.com", true),
             };
         }
 

@@ -1,5 +1,6 @@
 ﻿using Proyecto_Final.Modelo;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Proyecto_Final
@@ -76,8 +77,8 @@ namespace Proyecto_Final
             }
         }
 
-        private Viaje[] _viajes;
-        public Viaje[] Viajes
+        private HashSet<Viaje> _viajes;
+        public HashSet<Viaje> Viajes
         {
             get { return _viajes; }
             set
@@ -111,7 +112,7 @@ namespace Proyecto_Final
             Apellido1 = apellido1;
             Apellido2 = apellido2;
             Email = email;
-            Viajes = new Viaje[99];
+            Viajes = new HashSet<Viaje>();
             DadoAlta = dadoAlta;
         }
 

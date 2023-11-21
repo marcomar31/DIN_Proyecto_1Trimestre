@@ -10,6 +10,7 @@ namespace Proyecto_Final
     {
         public Cliente Cliente { get; private set; }
         public ObservableCollection<Viaje> ListaViajes { get; set; }
+        private HashSet<Viaje> ConjuntoViajes;
 
         public DetallesClienteWindow(Cliente clienteSeleccionado)
         {
@@ -18,6 +19,7 @@ namespace Proyecto_Final
             LoadCliente();
 
             ListaViajes = new ObservableCollection<Viaje>(ObtenerListaViajes());
+            ListViewViajes.ItemsSource = ListaViajes;
 
         }
 
@@ -33,9 +35,9 @@ namespace Proyecto_Final
 
         private List<Viaje> ObtenerListaViajes()
         {
-            Viaje[] arrayDeViajes = Cliente.Viajes;
+            ConjuntoViajes = Cliente.Viajes;
 
-            List<Viaje> listaDeViajes = new List<Viaje>(arrayDeViajes);
+            List<Viaje> listaDeViajes = new List<Viaje>(ConjuntoViajes);
 
             return listaDeViajes;
         }
@@ -48,12 +50,32 @@ namespace Proyecto_Final
             Viaje nuevoViaje = ventanaAgregarViaje.NuevoViaje;
             if (nuevoViaje != null)
             {
+                ConjuntoViajes.Add(nuevoViaje);
                 ListaViajes.Add(nuevoViaje);
             }
         }
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void BtnEliminarViaje_Click(object sender, RoutedEventArgs e)
+        {
+            if (ListViewViajes.Items.Count > 0)
+            {
+                Viaje ViajeSeleccionado = ListViewViajes.SelectedItem as Viaje;
+                if (ViajeSeleccionado != null)
+                {
+                    ListaViajes.Remove(ViajeSeleccionado);
+                }
+                else
+                {
+                    MessageBox.Show("Para eliminar un viaje, deberá seleccionar el viaje en la tabla", "Warning");
+                }
+            } else
+            {
+                MessageBox.Show("Error al intentar eliminar el viaje. No hay viajes asociados a este usuario", "Error");
+            }
         }
     }
 }

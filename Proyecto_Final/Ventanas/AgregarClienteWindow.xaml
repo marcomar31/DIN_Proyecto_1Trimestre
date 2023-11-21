@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="AgregarClienteWindow" Height="451" Width="800"
-        ResizeMode="NoResize">
+        Title="Añadir Cliente" MinWidth="800" MinHeight="450"
+        ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Background>
         <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
     </Window.Background>

@@ -19,7 +19,6 @@ namespace Proyecto_Final
     /// </summary>
     public partial class AgregarClienteWindow : Window
     {
-        // Propiedad pública para almacenar el cliente
         public Cliente NuevoCliente { get; private set; }
 
         public AgregarClienteWindow()
