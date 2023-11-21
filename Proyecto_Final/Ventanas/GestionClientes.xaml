@@ -8,7 +8,7 @@
         Title="Gestionar Clientes" MinWidth="800" MinHeight="450"
         ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Background>
-        <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid Margin="10,10,10,11">
         <ListView x:Name="lvClientes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="35,30,35,103">

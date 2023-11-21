@@ -8,7 +8,7 @@
         Title="AgregarViajeWindow" Height="451" Width="800"
         ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="/necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 (1).png" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid Margin="10,10,10,6">
         <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-7,0,0"/>

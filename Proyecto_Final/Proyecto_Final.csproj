@@ -137,16 +137,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="fondo-elegante-y-minimalista-para-una-agencia-de-viajes-semi-profesional-428960554 %281%29.png" />
+    <Resource Include="Background_Paisaje.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="necesito-unas-imagenes-muy-similares-pero-variadas-para-utilizar-para-el-fondo-de-mi-aplicacin-de-a-295184676 %281%29.png" />
+    <Resource Include="FondoLogin.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FondoUsuario.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="FondoLogin.png" />
+    <Resource Include="Favicon_Maleta_SinFondo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
