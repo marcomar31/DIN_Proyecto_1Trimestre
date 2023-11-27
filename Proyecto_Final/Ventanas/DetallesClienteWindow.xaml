@@ -5,44 +5,88 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="DetallesClienteWindow" Height="451" Width="800"
-        ResizeMode="NoResize">
+        Title="Viajes Cliente" MinWidth="800" MinHeight="450"
+        ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
-    <Grid Margin="10,10,10,6">
-        <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-20,0,0"/>
-        <Label Content="DNI" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-446,-221,0,0"/>
-        <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="-311,-172,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
-        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnVolver_Click"/>
-        <Label Content="Nombre" HorizontalAlignment="Center" Margin="-406,-85,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="tbNombre" HorizontalAlignment="Center" Margin="-311,-36,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
-        <Label Content="Primer Apellido" HorizontalAlignment="Center" Margin="215,-221,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="tbApellido1" HorizontalAlignment="Center" Margin="262,-172,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
-        <Label Content="Segundo Apellido" HorizontalAlignment="Center" Margin="232,-85,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="tbApellido2" HorizontalAlignment="Center" Margin="262,-36,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
-        <Label Content="Email" HorizontalAlignment="Center" Margin="-435,58,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="tbEmail" HorizontalAlignment="Center" Margin="-311,106,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
-        <CheckBox x:Name="checkbxDadoAlta" Content="Dado de alta" HorizontalAlignment="Center" Margin="-280,200,0,0" VerticalAlignment="Center" Height="36" Width="176" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="16" IsChecked="True" IsEnabled="False"/>
-        <Label Content="Viajes" HorizontalAlignment="Center" Margin="10,105,0,0" VerticalAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <ListView x:Name="ListViewViajes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="276,102,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="82">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Orígen" DisplayMemberBinding="{Binding Origen}" Width="96"/>
-                    <GridViewColumn Header="Destino" DisplayMemberBinding="{Binding Destino}" Width="96"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="BtnAniadirViaje" Content="Añadir viaje" HorizontalAlignment="Center" Margin="167,222,0,0" VerticalAlignment="Center" Width="100" Height="23" Click="BtnAniadirViaje_Click"/>
-        <Button x:Name="BtnEliminarViaje" Content="Eliminar viaje" HorizontalAlignment="Center" Margin="386,222,0,0" VerticalAlignment="Center" Width="100" Height="23" Click="BtnEliminarViaje_Click"/>
-    </Grid>
+    <Viewbox MaxHeight="600" MaxWidth="800">
+        <Grid Margin="10,10,10,6">
+            <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-20,0,0"/>
+            <Label Content="DNI" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-446,-221,0,0"/>
+            <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="-311,-172,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
+            <Label Content="Nombre" HorizontalAlignment="Center" Margin="-406,-85,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="tbNombre" HorizontalAlignment="Center" Margin="-311,-36,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
+            <Label Content="Primer Apellido" HorizontalAlignment="Center" Margin="215,-221,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="tbApellido1" HorizontalAlignment="Center" Margin="262,-172,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
+            <Label Content="Segundo Apellido" HorizontalAlignment="Center" Margin="232,-85,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="tbApellido2" HorizontalAlignment="Center" Margin="262,-36,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
+            <Label Content="Email" HorizontalAlignment="Center" Margin="-435,58,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="tbEmail" HorizontalAlignment="Center" Margin="-311,106,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center" IsEnabled="False"/>
+            <CheckBox x:Name="checkbxDadoAlta" Content="Dado de alta" HorizontalAlignment="Center" Margin="-280,200,0,0" VerticalAlignment="Center" Height="36" Width="176" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="16" IsChecked="True" IsEnabled="False"/>
+            <Label Content="Viajes" HorizontalAlignment="Center" Margin="10,105,0,0" VerticalAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <ListView x:Name="ListViewViajes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="276,102,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="82">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Orígen" DisplayMemberBinding="{Binding Origen}" Width="96"/>
+                        <GridViewColumn Header="Destino" DisplayMemberBinding="{Binding Destino}" Width="96"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="BtnAniadirViaje" Content="Añadir viaje" HorizontalAlignment="Center" Margin="167,222,0,0" VerticalAlignment="Center" Width="100" Height="23" Click="BtnAniadirViaje_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="BtnEliminarViaje" Content="Eliminar viaje" HorizontalAlignment="Center" Margin="386,222,0,0" VerticalAlignment="Center" Width="100" Height="23" Click="BtnEliminarViaje_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnVolver_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Viewbox>
 </Window>
