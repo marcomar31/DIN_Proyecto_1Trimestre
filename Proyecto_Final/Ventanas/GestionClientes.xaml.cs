@@ -45,7 +45,7 @@ namespace Proyecto_Final
 
         private void BtnEliminarCliente_Click(object sender, RoutedEventArgs e)
         {
-            Cliente clienteSeleccionado = lvClientes.SelectedItem as Cliente;
+            Cliente clienteSeleccionado = (Cliente)lvClientes.SelectedItem;
             if (clienteSeleccionado != null)
             {
                 ListaClientes.Remove(clienteSeleccionado);
@@ -57,7 +57,7 @@ namespace Proyecto_Final
 
         private void BtnEditarCliente_Click(object sender, RoutedEventArgs e)
         {
-            Cliente clienteSeleccionado = lvClientes.SelectedItem as Cliente;
+            Cliente clienteSeleccionado = (Cliente)lvClientes.SelectedItem;
 
             if (clienteSeleccionado != null)
             {
@@ -69,17 +69,17 @@ namespace Proyecto_Final
             }
         }
 
-        private void btnDetallesCliente_Click(object sender, RoutedEventArgs e)
+        private void BtnDetallesCliente_Click(object sender, RoutedEventArgs e)
         {
-            Cliente clienteSeleccionado = lvClientes.SelectedItem as Cliente;
+            Cliente clienteSeleccionado = (Cliente)lvClientes.SelectedItem;
 
             if (clienteSeleccionado != null)
             {
-                DetallesClienteWindow ventanaEditarCliente = new DetallesClienteWindow(clienteSeleccionado);
+                ViajesClienteWindow ventanaEditarCliente = new ViajesClienteWindow(clienteSeleccionado);
                 ventanaEditarCliente.ShowDialog();
             } else
             {
-                MessageBox.Show("Para ver los detalles de un cliente, deberá seleccionar el cliente en la tabla", "Warning");
+                MessageBox.Show("Para ver los viajes de un cliente, deberá seleccionar el cliente en la tabla", "Warning");
             }
         }
     }

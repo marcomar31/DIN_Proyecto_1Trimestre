@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="Login" MinWidth="800" MinHeight="450"
+        Title="Login" MinWidth="1200" MinHeight="850"
         ResizeMode="CanResizeWithGrip" SizeToContent="Manual">
     <Window.Icon>
         <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>

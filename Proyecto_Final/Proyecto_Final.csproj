@@ -63,7 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Ventanas\DetallesClienteWindow.xaml">
+    <Page Include="Ventanas\ViajesClienteWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -89,8 +89,8 @@
     <Compile Include="Ventanas\AgregarViajeWindow.xaml.cs">
       <DependentUpon>AgregarViajeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\DetallesClienteWindow.xaml.cs">
-      <DependentUpon>DetallesClienteWindow.xaml</DependentUpon>
+    <Compile Include="Ventanas\ViajesClienteWindow.xaml.cs">
+      <DependentUpon>ViajesClienteWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\EditarClienteWindow.xaml.cs">
       <DependentUpon>EditarClienteWindow.xaml</DependentUpon>

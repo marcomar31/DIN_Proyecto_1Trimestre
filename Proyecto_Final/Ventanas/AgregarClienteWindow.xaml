@@ -5,13 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="Añadir Cliente" MinWidth="800" MinHeight="450"
+        Title="Añadir Cliente" MinWidth="1200" MinHeight="850"
         ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
+    <Window.Icon>
+        <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>
+    </Window.Icon>
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
     <Viewbox MaxHeight="800" MaxWidth="1000">
-        <Grid Margin="10,10,10,6">
+        <Viewbox.OpacityMask>
+            <ImageBrush ImageSource="/Background_Paisaje.png"/>
+        </Viewbox.OpacityMask>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="404" Width="564">
             <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-7,0,0"/>
             <Label Content="DNI" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="-443,-221,0,0"/>
             <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="-311,-163,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>

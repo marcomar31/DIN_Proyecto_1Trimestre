@@ -6,13 +6,13 @@ using System.Windows;
 
 namespace Proyecto_Final
 {
-    public partial class DetallesClienteWindow : Window
+    public partial class ViajesClienteWindow : Window
     {
         public Cliente Cliente { get; private set; }
         public ObservableCollection<Viaje> ListaViajes { get; set; }
         private HashSet<Viaje> ConjuntoViajes;
 
-        public DetallesClienteWindow(Cliente clienteSeleccionado)
+        public ViajesClienteWindow(Cliente clienteSeleccionado)
         {
             InitializeComponent();
             Cliente = clienteSeleccionado;
@@ -63,7 +63,7 @@ namespace Proyecto_Final
         {
             if (ListViewViajes.Items.Count > 0)
             {
-                Viaje ViajeSeleccionado = ListViewViajes.SelectedItem as Viaje;
+                Viaje ViajeSeleccionado = (Viaje)ListViewViajes.SelectedItem;
                 if (ViajeSeleccionado != null)
                 {
                     ListaViajes.Remove(ViajeSeleccionado);

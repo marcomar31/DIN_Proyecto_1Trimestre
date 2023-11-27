@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="AgregarViajeWindow" Height="451" Width="800"
+        Title="AgregarViajeWindow" MinWidth="1200" MinHeight="850"
         ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
