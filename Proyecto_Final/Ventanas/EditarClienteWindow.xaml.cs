@@ -35,5 +35,10 @@ namespace Proyecto_Final
 
             Close();
         }
+
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

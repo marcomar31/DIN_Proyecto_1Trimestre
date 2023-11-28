@@ -1,7 +1,9 @@
-﻿using Proyecto_Final.Modelo;
+﻿using Proyecto_Final.Enumerados;
+using Proyecto_Final.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace Proyecto_Final
 {
@@ -105,6 +107,19 @@ namespace Proyecto_Final
             }
         }
 
+        public String _descripcion;
+        public String Descripcion {
+            get { return _descripcion; }
+            set
+            {
+                if (_descripcion != value)
+                {
+                    _descripcion = value;
+                    OnPropertyChanged(nameof(Descripcion));
+                }
+            }
+        }
+
         public Cliente(string dni, string nombre, string apellido1, string apellido2, string email, bool dadoAlta)
         {
             Dni = dni;
@@ -114,6 +129,7 @@ namespace Proyecto_Final
             Email = email;
             Viajes = new HashSet<Viaje>();
             DadoAlta = dadoAlta;
+            Descripcion = "Gestión pendiente";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

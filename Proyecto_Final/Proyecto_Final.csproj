@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Enumerados\Ciudades.cs" />
+    <Compile Include="Enumerados\Descripcion.cs" />
     <Compile Include="Enumerados\TipoTransporte.cs" />
     <Compile Include="Enumerados\TipoHotel.cs" />
     <Compile Include="MainWindow.xaml.cs">

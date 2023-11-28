@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
         Title="Login" MinWidth="1200" MinHeight="850"
-        ResizeMode="CanResizeWithGrip" SizeToContent="Manual">
+        ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Icon>
         <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>
     </Window.Icon>

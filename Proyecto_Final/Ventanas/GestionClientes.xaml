@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="Gestionar Clientes" MinWidth="800" MinHeight="450"
+        Title="Gestionar Clientes" MinWidth="1200" MinHeight="850"
         ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
+    <Window.Icon>
+        <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>
+    </Window.Icon>
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
@@ -21,7 +24,7 @@
                                 <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding Nombre}" Width="140"/>
                                 <GridViewColumn Header="Primer Apellido" DisplayMemberBinding="{Binding Apellido1}" Width="140"/>
                                 <GridViewColumn Header="Segundo Apellido" DisplayMemberBinding="{Binding Apellido2}" Width="140"/>
-                                <GridViewColumn Header="Número de Viajes" DisplayMemberBinding="{Binding Viajes.Count}" Width="140"/>
+                                <GridViewColumn Header="Descripción" DisplayMemberBinding="{Binding Descripcion}" Width="140"/>
                                 <GridViewColumn Header="Dado de alta" DisplayMemberBinding="{Binding DadoAlta}" Width="140"/>
                             </GridView>
                         </ListView.View>

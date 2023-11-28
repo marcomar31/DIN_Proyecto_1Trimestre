@@ -18,19 +18,52 @@
             <ImageBrush ImageSource="/Background_Paisaje.png"/>
         </Viewbox.OpacityMask>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="404" Width="564">
-            <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-7,0,0"/>
-            <Label Content="DNI" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="-443,-221,0,0"/>
-            <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="-311,-163,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-            <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnAceptar_Click"/>
-            <Label Content="Nombre" HorizontalAlignment="Center" Margin="-406,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-            <TextBox x:Name="tbNombre" HorizontalAlignment="Center" Margin="-311,11,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-            <Label Content="Primer Apellido" HorizontalAlignment="Center" Margin="227,-221,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-            <TextBox x:Name="tbApellido1" HorizontalAlignment="Center" Margin="262,-163,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-            <Label Content="Segundo Apellido" HorizontalAlignment="Center" Margin="256,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-            <TextBox x:Name="tbApellido2" HorizontalAlignment="Center" Margin="262,11,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-            <Label Content="Email" HorizontalAlignment="Center" Margin="-430,126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-            <TextBox x:Name="tbEmail" HorizontalAlignment="Center" Margin="-311,185,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-            <CheckBox x:Name="checkbxDadoAlta" Content="Dar de alta" HorizontalAlignment="Center" Margin="262,185,0,0" VerticalAlignment="Center" Height="36" Width="176" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" IsChecked="True"/>
+            <Border CornerRadius="15" Background="White" Margin="0,0,0,72">
+                <Grid>
+                    <Label Content="EDITAR CLIENTE" HorizontalAlignment="Center" FontWeight="Bold" FontSize="36" Margin="0,12,0,12" Width="436" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFE4714C" VerticalAlignment="Top"/>
+                    <Label Content="DNI" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="35,-141,0,0"/>
+                    <TextBox x:Name="tbDni" HorizontalAlignment="Left" Margin="35,-83,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Nombre" HorizontalAlignment="Left" Margin="35,23,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="35,81,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Primer Apellido" Margin="227,-141,68,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Right"/>
+                    <TextBox x:Name="tbApellido1" HorizontalAlignment="Right" Margin="0,-81,35,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Segundo Apellido" HorizontalAlignment="Right" Margin="0,23,50,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <TextBox x:Name="tbApellido2" HorizontalAlignment="Right" Margin="0,81,35,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="35,186,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Margin="35,245,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <CheckBox x:Name="checkbxDadoAlta" Content="Dar de alta" HorizontalAlignment="Center" Margin="262,245,0,0" VerticalAlignment="Center" Height="36" Width="176" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" IsChecked="True"/>
+                </Grid>
+            </Border>
+            <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-200,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnAceptar_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="200,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnCancelar_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
     </Viewbox>
 </Window>

@@ -6,25 +6,62 @@
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
         Title="AgregarViajeWindow" MinWidth="1200" MinHeight="850"
-        ResizeMode="NoResize">
+        ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
+    <Window.Icon>
+        <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>
+    </Window.Icon>
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
-    <Grid Margin="10,10,10,6">
-        <Image HorizontalAlignment="Center" Height="297" VerticalAlignment="Center" Width="552" Source="/FondoUsuario.png" Margin="0,-7,0,0"/>
-        <Label Content="Orígen" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="-424,-221,0,0"/>
-        <ComboBox x:Name="ComboBoxOrigen" HorizontalAlignment="Center" Margin="-311,-163,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
-        <Label Content="Fecha de Ida" HorizontalAlignment="Center" Margin="-378,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-        <DatePicker x:Name="DatePickerIda" HorizontalAlignment="Center" Margin="-311,11,0,0" VerticalAlignment="Center" Width="177"/>
-        <Label Content="Destino" HorizontalAlignment="Center" Margin="156,-221,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-        <ComboBox x:Name="ComboBoxDestino" HorizontalAlignment="Center" Margin="262,-163,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
-        <Label Content="Fecha de Vuelta" HorizontalAlignment="Center" Margin="224,-47,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-        <DatePicker x:Name="DatePickerVuelta" HorizontalAlignment="Center" Margin="262,11,0,0" VerticalAlignment="Center" Width="177"/>
-        <Label Content="Tipo de Hotel" HorizontalAlignment="Center" Margin="-366,126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-        <ComboBox x:Name="ComboBoxTipoHotel" HorizontalAlignment="Center" Margin="-311,185,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
-        <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-150,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnAceptar_Click"/>
-        <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="150,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnCancelar_Click"/>
-        <Label Content="Tipo de Transporte" HorizontalAlignment="Center" Margin="251,126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-        <ComboBox x:Name="ComboBoxTipoTransporte" HorizontalAlignment="Center" Margin="262,185,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
-    </Grid>
+    <Viewbox MaxHeight="800" MaxWidth="1000">
+        <Grid>
+            <Border CornerRadius="15" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" Width="528" Height="295" Margin="0,24,0,0">
+                <Grid>
+                    <Label Content="AÑADIR VIAJE" HorizontalAlignment="Center" FontWeight="Bold" FontSize="36" Width="436" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFE4714C" VerticalAlignment="Top" Margin="0,5,0,0"/>
+                    <Label Content="Orígen" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="-424,-141,0,0"/>
+                    <ComboBox x:Name="ComboBoxOrigen" HorizontalAlignment="Center" Margin="-311,-73,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
+                    <Label Content="Fecha de Ida" HorizontalAlignment="Center" Margin="-378,13,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <DatePicker x:Name="DatePickerIda" HorizontalAlignment="Center" Margin="-311,71,0,0" VerticalAlignment="Center" Width="177"/>
+                    <Label Content="Destino" HorizontalAlignment="Center" Margin="156,-141,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <ComboBox x:Name="ComboBoxDestino" HorizontalAlignment="Center" Margin="262,-73,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
+                    <Label Content="Fecha de Vuelta" HorizontalAlignment="Center" Margin="224,13,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <DatePicker x:Name="DatePickerVuelta" HorizontalAlignment="Center" Margin="262,71,0,0" VerticalAlignment="Center" Width="177"/>
+                    <Label Content="Tipo de Hotel" HorizontalAlignment="Center" Margin="-366,166,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <ComboBox x:Name="ComboBoxTipoHotel" HorizontalAlignment="Center" Margin="-311,225,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
+                    <Label Content="Tipo de Transporte" HorizontalAlignment="Center" Margin="251,166,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <ComboBox x:Name="ComboBoxTipoTransporte" HorizontalAlignment="Center" Margin="262,225,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
+                </Grid>
+            </Border>
+            <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-150,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnAceptar_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="150,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnCancelar_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Viewbox>
 </Window>
