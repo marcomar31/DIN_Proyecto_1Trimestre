@@ -12,7 +12,8 @@ namespace Proyecto_Final.Enumerados
             {
                 "Sin descripción",
                 "Gestión pendiente",
-                "Viaje cancelado"               
+                "Viaje cancelado",    
+                "Viaje cerrado"
             };
             
         }

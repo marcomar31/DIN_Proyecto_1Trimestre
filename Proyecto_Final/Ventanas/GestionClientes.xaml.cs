@@ -33,8 +33,9 @@ namespace Proyecto_Final
             Cliente cliente10 = new Cliente("00000009J", "Sofía", "Ortega", "Soto", "email10@mail.com", false);
 
             cliente1.Viajes.Add(new Viaje(Ciudades.Cracovia, Ciudades.Barcelona, DateTime.Now.AddDays(19), DateTime.Now.AddDays(25), TipoHotel.Lujoso, TipoTransporte.Combinado, EstadoViaje.Cancelado));
-            cliente5.Viajes.Add(new Viaje(Ciudades.Cracovia, Ciudades.Viena, DateTime.Now.AddDays(14), DateTime.Now.AddDays(17), TipoHotel.Estandar, TipoTransporte.Avion, EstadoViaje.Cancelado));
-            cliente9.Viajes.Add(new Viaje(Ciudades.Dublín, Ciudades.Zurich, DateTime.Now.AddDays(7), DateTime.Now.AddDays(25), TipoHotel.Lujoso, TipoTransporte.Tren, EstadoViaje.Cancelado));
+            cliente4.Viajes.Add(new Viaje(Ciudades.Atenas, Ciudades.Viena, DateTime.Now.AddDays(14), DateTime.Now.AddDays(17), TipoHotel.Estandar, TipoTransporte.Avion, EstadoViaje.Cerrado));
+            cliente7.Viajes.Add(new Viaje(Ciudades.Dubrovnik, Ciudades.Edimburgo, DateTime.Now, DateTime.Now.AddDays(5), TipoHotel.Estandar, TipoTransporte.Avion, EstadoViaje.Cerrado));
+            cliente9.Viajes.Add(new Viaje(Ciudades.Dublín, Ciudades.Zurich, DateTime.Now.AddDays(17), DateTime.Now.AddDays(25), TipoHotel.Lujoso, TipoTransporte.Tren, EstadoViaje.Cancelado));
 
             List<Cliente> clientes = new List<Cliente>
             {
@@ -45,11 +46,17 @@ namespace Proyecto_Final
             foreach (Cliente cliente in clientes)
             {
                 cliente.Viajes.Add(new Viaje(Ciudades.Madrid, Ciudades.Roma, DateTime.Now.AddDays(4), DateTime.Now.AddDays(11), TipoHotel.Premium, TipoTransporte.Avion, EstadoViaje.Abierto));
-                cliente.Viajes.Add(new Viaje(Ciudades.París, Ciudades.Atenas, DateTime.Now.AddDays(9), DateTime.Now.AddDays(15), TipoHotel.Estandar, TipoTransporte.Combinado, EstadoViaje.Cerrado));
+                cliente.Viajes.Add(new Viaje(Ciudades.París, Ciudades.Atenas, DateTime.Now.AddDays(9), DateTime.Now.AddDays(15), TipoHotel.Estandar, TipoTransporte.Combinado, EstadoViaje.Abierto));
 
                 if (cliente.Viajes.ToList().Any(viaje => viaje.EstadoViaje == EstadoViaje.Cancelado))
                 {
                     cliente.Descripcion = "Viaje cancelado";
+                } else if (cliente.Viajes.ToList().Any(viaje => viaje.EstadoViaje == EstadoViaje.Cerrado))
+                {
+                    cliente.Descripcion = "Viaje cerrado";
+                } else
+                {
+                    cliente.Descripcion = "Gestión pendiente";
                 }
             }
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="Viajes Cliente" MinWidth="1200" MinHeight="850"
+        Title="Viajes Cliente" MinWidth="854" MinHeight="480"
         ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Icon>
         <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>
@@ -13,12 +13,12 @@
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
-    <Viewbox MaxHeight="800" MaxWidth="1000">
+    <Viewbox MaxHeight="750" MaxWidth="800">
         <Grid Height="396">
-            <Border CornerRadius="15" Background="White" Margin="0,0,0,63">
+            <Border CornerRadius="15" Background="White" Margin="0,20,10,63">
                 <Grid>
                     <Label Content="VIAJES DEL CLIENTE" HorizontalAlignment="Center" FontWeight="Bold" FontSize="36" Width="436" Height="53" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFE4714C" VerticalAlignment="Top" Margin="0,10,0,0"/>
-                    <Label Content="DNI" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="13,70,0,0"/>
+                    <Label Content="DNI/NIF" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="13,70,0,0"/>
                     <TextBox x:Name="tbDni" HorizontalAlignment="Left" Margin="98,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="20" VerticalContentAlignment="Center" IsEnabled="False" FontSize="8"/>
                     <Label Content="Nombre" HorizontalAlignment="Left" Margin="13,100,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="98,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="20" VerticalContentAlignment="Center" IsEnabled="False" FontSize="8"/>
@@ -28,8 +28,8 @@
                     <TextBox x:Name="tbApellido2" HorizontalAlignment="Left" Margin="385,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="20" VerticalContentAlignment="Center" IsEnabled="False" FontSize="8"/>
                     <Label Content="Email" HorizontalAlignment="Left" Margin="13,129,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Margin="98,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="20" VerticalContentAlignment="Center" IsEnabled="False" FontSize="8"/>
-                    <CheckBox x:Name="checkbxDadoAlta" Content="Dado de alta" HorizontalAlignment="Left" Margin="264,130,0,0" VerticalAlignment="Top" Height="24" Width="176" VerticalContentAlignment="Center" FontWeight="Bold" IsChecked="True" IsEnabled="False"/>
-                    <Label Content="Viajes" HorizontalAlignment="Left" Margin="-2,215,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+                    <CheckBox x:Name="checkbxDadoAlta" Content="Dado de alta" HorizontalAlignment="Left" Margin="320,130,0,0" VerticalAlignment="Top" Height="24" Width="129" VerticalContentAlignment="Center" FontWeight="Bold" IsChecked="True" IsEnabled="False"/>
+                    <Label Content="Viajes" HorizontalAlignment="Left" Margin="-2,210,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
                         <Label.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -39,7 +39,7 @@
                             </TransformGroup>
                         </Label.RenderTransform>
                     </Label>
-                    <ListView x:Name="ListViewViajes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="41,164,10,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="501" Height="126" FontSize="10">
+                    <ListView x:Name="ListViewViajes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="41,164,10,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="501" Height="116" FontSize="10">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Orígen" DisplayMemberBinding="{Binding Origen}" Width="74"/>
@@ -52,7 +52,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button x:Name="BtnAniadirViaje" Content="Añadir viaje" HorizontalAlignment="Left" Margin="302,300,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="BtnAniadirViaje_Click">
+                    <Button x:Name="BtnAniadirViaje" Content="Añadir viaje" HorizontalAlignment="Left" Margin="302,285,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="BtnAniadirViaje_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -67,7 +67,7 @@
                             </Style>
                         </Button.Style>
                     </Button>
-                    <Button x:Name="BtnEliminarViaje" Content="Eliminar viaje" HorizontalAlignment="Left" Margin="424,300,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="BtnEliminarViaje_Click">
+                    <Button x:Name="BtnEliminarViaje" Content="Eliminar viaje" HorizontalAlignment="Left" Margin="424,285,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="BtnEliminarViaje_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -84,7 +84,7 @@
                     </Button>
                 </Grid>
             </Border>
-            <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40" Width="130" Click="BtnVolver_Click">
+            <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40" Width="130" Click="BtnVolver_Click" Margin="0,0,0,12">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">

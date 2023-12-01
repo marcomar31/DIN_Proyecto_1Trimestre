@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="Login" MinWidth="1200" MinHeight="850"
+        Title="Login" MinWidth="854" MinHeight="480"
         ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Icon>
         <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>
@@ -13,13 +13,13 @@
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
-    <Viewbox MaxHeight="800" MaxWidth="1000">
+    <Viewbox MaxHeight="750" MaxWidth="800">
         <Viewbox.OpacityMask>
             <ImageBrush ImageSource="/Background_Paisaje.png"/>
         </Viewbox.OpacityMask>
-        <Grid Margin="251,63,251,28">
+        <Grid Margin="251,20,251,20">
             <Image HorizontalAlignment="Center" Height="318" VerticalAlignment="Center" Source="/FondoLogin.png" Width="278"/>
-            <Label Content="DNI" HorizontalAlignment="Center" Margin="-152,-126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+            <Label Content="DNI/NIF" HorizontalAlignment="Center" Margin="-116,-126,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
             <Label Content="Contraseña" HorizontalAlignment="Center" Margin="-100,36,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
             <TextBox x:Name="tbDni" HorizontalAlignment="Center" Margin="0,-66,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="188" Height="37" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
             <PasswordBox x:Name="passwdboxContrasenia" HorizontalAlignment="Center" Margin="0,94,0,0" VerticalAlignment="Center" Width="188" Height="37" VerticalContentAlignment="Center" Padding="5,0,0,0"/>

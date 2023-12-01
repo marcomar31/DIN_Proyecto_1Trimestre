@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Windows;
 using Proyecto_Final.Enumerados;
 
 namespace Proyecto_Final.Modelo
@@ -59,5 +60,34 @@ namespace Proyecto_Final.Modelo
             return letra == letraEsperada;
         }
 
+        public bool DNICorrecto(String dniConLetra)
+        {
+            if (dniConLetra.Length == 9)
+            {
+                if (dniFormatoCorrecto(dniConLetra))
+                {
+                    char letraDni = extraeLetraDni(dniConLetra);
+                    String dniSinLetra = getDniSinLetra(dniConLetra);
+                    if (letraDniCorrecta(dniConLetra))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Asegúrese de que el DNI/NIF \"" + dniSinLetra + "\" y la letra \"" + letraDni + "\" son correspondientes", "Valores introducidos no válidos");
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El campo \"DNI/NIF\" debe tener el formato 12345678A", "Valores introducidos no válidos");
+                    return false;
+                }
+            } else
+            {
+                MessageBox.Show("El campo \"DNI/NIF\" debe tener una longitud de 9 caracteres", "Valores introducidos no válidos");
+                return false;
+            }
+        }
     }
 }

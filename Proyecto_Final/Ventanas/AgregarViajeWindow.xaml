@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="AgregarViajeWindow" MinWidth="1200" MinHeight="850"
+        Title="Añadir Viaje" MinWidth="854" MinHeight="480"
         ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Icon>
         <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>
@@ -13,8 +13,8 @@
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
-    <Viewbox MaxHeight="800" MaxWidth="1000">
-        <Grid>
+    <Viewbox MaxHeight="750" MaxWidth="800">
+        <Grid Height="396">
             <Border CornerRadius="15" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" Width="528" Height="295" Margin="0,24,0,0">
                 <Grid>
                     <Label Content="AÑADIR VIAJE" HorizontalAlignment="Center" FontWeight="Bold" FontSize="36" Width="436" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFE4714C" VerticalAlignment="Top" Margin="0,5,0,0"/>
@@ -32,7 +32,7 @@
                     <ComboBox x:Name="ComboBoxTipoTransporte" HorizontalAlignment="Center" Margin="262,225,0,0" VerticalAlignment="Center" Width="176" Height="24"/>
                 </Grid>
             </Border>
-            <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-150,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnAceptar_Click">
+            <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-150,320,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnAceptar_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">
@@ -47,7 +47,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="150,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnCancelar_Click">
+            <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="150,320,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="btnCancelar_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">
