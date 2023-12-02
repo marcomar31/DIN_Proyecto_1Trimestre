@@ -1,8 +1,11 @@
-﻿using Proyecto_Final.Modelo;
+﻿using Proyecto_Final.Enumerados;
+using Proyecto_Final.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Proyecto_Final
 {
@@ -17,10 +20,30 @@ namespace Proyecto_Final
             InitializeComponent();
             Cliente = clienteSeleccionado;
             LoadCliente();
+            LoadListaViajes();
+            LoadFiltros();
+        }
 
+        private void LoadFiltros()
+        {
+            ComboBoxEstado.ItemsSource = ObtenerOpcionesFiltro();
+            ComboBoxEstado.SelectedIndex = 0;
+        }
+
+        private void LoadListaViajes()
+        {
             ListaViajes = new ObservableCollection<Viaje>(ObtenerListaViajes());
             ListViewViajes.ItemsSource = ListaViajes;
+        }
 
+        private List<string> ObtenerOpcionesFiltro()
+        {
+            var opciones = new List<string>();
+            opciones.Add("SIN FILTRO");
+            opciones.AddRange(Enum.GetNames(typeof(EstadoViaje)));
+
+
+            return opciones;
         }
 
         private void LoadCliente()
@@ -41,6 +64,39 @@ namespace Proyecto_Final
 
             return listaDeViajes;
         }
+
+        private void ComboBoxEstado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FiltrarViajes();
+        }
+
+        private void FiltrarViajes()
+        {
+            string estadoFiltro = ComboBoxEstado.SelectedItem as string;
+
+            if (estadoFiltro == "SIN FILTRO")
+            {
+                // Si es "SIN FILTRO", muestra todos los viajes
+                ListaViajes.Clear();
+                foreach (var viaje in ConjuntoViajes)
+                {
+                    ListaViajes.Add(viaje);
+                }
+            }
+            else
+            {
+                // Filtra por estado seleccionado
+                EstadoViaje estadoSeleccionado = (EstadoViaje)Enum.Parse(typeof(EstadoViaje), estadoFiltro);
+                List<Viaje> viajesFiltrados = ConjuntoViajes.Where(v => v.EstadoViaje == estadoSeleccionado).ToList();
+
+                ListaViajes.Clear();
+                foreach (var viaje in viajesFiltrados)
+                {
+                    ListaViajes.Add(viaje);
+                }
+            }
+        }
+
 
         private void BtnAniadirViaje_Click(object sender, RoutedEventArgs e)
         {
