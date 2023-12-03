@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Proyecto_Final"
         mc:Ignorable="d"
-        Title="EditarClienteWindow" MinWidth="1200" MinHeight="850"
+        Title="EditarClienteWindow" MinWidth="854" MinHeight="480"
         ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
     <Window.Icon>
         <BitmapImage UriSource="/Favicon_Maleta_SinFondo.png"/>
@@ -13,28 +12,28 @@
     <Window.Background>
         <ImageBrush ImageSource="/Background_Paisaje.png" Stretch="UniformToFill"/>
     </Window.Background>
-    <Viewbox MaxHeight="800" MaxWidth="1000">
+    <Viewbox MaxHeight="750" MaxWidth="800">
         <Viewbox.OpacityMask>
             <ImageBrush ImageSource="/Background_Paisaje.png"/>
         </Viewbox.OpacityMask>
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="404" Width="564">
-            <Border CornerRadius="15" Background="White" Margin="0,0,0,72">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="318" Width="564">
+            <Border CornerRadius="15" Background="White" Margin="10,10,10,60">
                 <Grid>
-                    <Label Content="EDITAR CLIENTE" HorizontalAlignment="Center" FontWeight="Bold" FontSize="36" Margin="0,12,0,12" Width="436" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFE4714C" VerticalAlignment="Top"/>
-                    <Label Content="DNI" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="35,-141,0,0"/>
-                    <TextBox x:Name="tbDni" HorizontalAlignment="Left" Margin="35,-83,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-                    <Label Content="Nombre" HorizontalAlignment="Left" Margin="35,23,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                    <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="35,81,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-                    <Label Content="Primer Apellido" Margin="227,-141,68,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Right"/>
-                    <TextBox x:Name="tbApellido1" HorizontalAlignment="Right" Margin="0,-81,35,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-                    <Label Content="Segundo Apellido" HorizontalAlignment="Right" Margin="0,23,50,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                    <TextBox x:Name="tbApellido2" HorizontalAlignment="Right" Margin="0,81,35,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-                    <Label Content="Email" HorizontalAlignment="Left" Margin="35,186,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                    <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Margin="35,245,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
-                    <CheckBox x:Name="checkbxDadoAlta" Content="Dar de alta" HorizontalAlignment="Center" Margin="262,245,0,0" VerticalAlignment="Center" Height="36" Width="176" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" IsChecked="True"/>
+                    <Label Content="EDITAR CLIENTE" HorizontalAlignment="Center" FontWeight="Bold" FontSize="30" Width="436" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFE4714C" VerticalAlignment="Top"/>
+                    <Label Content="DNI/NIF" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Margin="35,-115,0,0" FontSize="14"/>
+                    <TextBox x:Name="tbDni" HorizontalAlignment="Left" Margin="35,-60,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Nombre" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="35,55,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Primer Apellido" HorizontalAlignment="Right" Margin="0,-115,97,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBox x:Name="tbApellido1" HorizontalAlignment="Right" Margin="0,-60,35,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Segundo Apellido" HorizontalAlignment="Right" Margin="0,0,83,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBox x:Name="tbApellido2" HorizontalAlignment="Right" Margin="0,55,35,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="35,115,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Margin="35,170,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <CheckBox x:Name="checkbxDadoAlta" Content="Dar de alta" Margin="0,181,35,0" VerticalAlignment="Top" Height="36" Width="158" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" IsChecked="True" HorizontalAlignment="Right"/>
                 </Grid>
             </Border>
-            <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-200,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnAceptar_Click">
+            <Button x:Name="BtnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-200,260,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnAceptar_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">
@@ -49,7 +48,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="200,352,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnCancelar_Click">
+            <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="200,260,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="BtnCancelar_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">
@@ -67,3 +66,4 @@
         </Grid>
     </Viewbox>
 </Window>
+

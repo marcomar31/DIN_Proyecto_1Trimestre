@@ -1,8 +1,6 @@
-﻿using Proyecto_Final.Enumerados;
-using Proyecto_Final.Modelo;
+﻿using Proyecto_Final.Modelo;
 using System;
 using System.Windows;
-using System.Windows.Input;
 
 namespace Proyecto_Final
 {
@@ -34,26 +32,26 @@ namespace Proyecto_Final
                     }
                     else
                     {
-                        MessageBox.Show("Asegúrese de que el DNI \"" + dniSinLetra + "\" y la letra \"" + letraDni + "\" son correspondientes", "Valores introducidos no válidos");
+                        MessageBox.Show("Asegúrese de que el DNI \"" + dniSinLetra + "\" y la letra \"" + letraDni + "\" son correspondientes", "Valores introducidos no válidos", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 } else
                 {
-                    MessageBox.Show("El campo \"DNI\" debe tener el formato 12345678A", "Valores introducidos no válidos");
+                    MessageBox.Show("El campo \"DNI\" debe tener el formato 12345678A", "Valores introducidos no válidos", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             } else
             {
                 if (tbDni.Text.Length <= 0 && passwdboxContrasenia.Password.Length <= 0)
                 {
-                    MessageBox.Show("Los campos \"DNI\" y \"Contraseña\" no puede estar en blanco", "Valores introducidos no válidos");
+                    MessageBox.Show("Los campos \"DNI\" y \"Contraseña\" no puede estar en blanco", "Valores introducidos no válidos", MessageBoxButton.OK, MessageBoxImage.Warning);
                 } else
                 {
                     if (tbDni.Text.Length <= 0)
                     {
-                        MessageBox.Show("El campo \"DNI\" no puede estar en blanco", "Valores introducidos no válidos");
+                        MessageBox.Show("El campo \"DNI\" no puede estar en blanco", "Valores introducidos no válidos", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                     else 
                     {
-                        MessageBox.Show("El campo \"Contraseña\" no puede estar en blanco", "Valores introducidos no válidos");
+                        MessageBox.Show("El campo \"Contraseña\" no puede estar en blanco", "Valores introducidos no válidos", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
             }
@@ -65,18 +63,18 @@ namespace Proyecto_Final
             {
                 if (passwdboxContrasenia.Password.Equals("1234"))
                 {
-                    GestionClientes subWindow = new GestionClientes();
+                    GestionarClientesWindow subWindow = new GestionarClientesWindow();
                     subWindow.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("La contraseña es incorrecta. Inténtelo de nuevo", "Credenciales incorrectas");
+                    MessageBox.Show("La contraseña es incorrecta. Inténtelo de nuevo", "Error al intentar acceder", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
             {
-                MessageBox.Show("El campo \"DNI\" debe tener el formato 12345678A", "Credenciales incorrectas");
+                MessageBox.Show("El campo \"DNI\" debe tener el formato 12345678A", "Credenciales incorrectas", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

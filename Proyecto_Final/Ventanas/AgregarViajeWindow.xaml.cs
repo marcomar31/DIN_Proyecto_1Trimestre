@@ -1,18 +1,7 @@
 ﻿using Proyecto_Final.Enumerados;
 using Proyecto_Final.Modelo;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Proyecto_Final
 {
@@ -26,6 +15,8 @@ namespace Proyecto_Final
         public AgregarViajeWindow()
         {
             InitializeComponent();
+            DatePickerIda.SelectedDate = DateTime.Now;
+            DatePickerVuelta.SelectedDate = DateTime.Now.AddDays(7);
             CargarCBoxes();
         }
 
@@ -67,25 +58,42 @@ namespace Proyecto_Final
             {
                 if (ComboBoxOrigen.SelectedItem is Ciudades origen && ComboBoxDestino.SelectedItem is Ciudades destino)
                 {
-                    NuevoViaje = new Viaje(
-                        origen,
-                        destino,
-                        DatePickerIda.SelectedDate ?? DateTime.Now,
-                        DatePickerVuelta.SelectedDate ?? DateTime.Now,
-                        (Enumerados.TipoHotel)ComboBoxTipoHotel.SelectedItem,
-                        (Enumerados.TipoTransporte)ComboBoxTipoTransporte.SelectedItem,
-                        Enumerados.EstadoViaje.Abierto
-                    );
-                    Close();
+                    DateTime fechaActual = DateTime.Now;
+
+                    if (DatePickerVuelta.SelectedDate > fechaActual.AddDays(-1) && DatePickerIda.SelectedDate > fechaActual.AddDays(-1))
+                    {
+                        if (DatePickerVuelta.SelectedDate > DatePickerIda.SelectedDate)
+                        {
+                            NuevoViaje = new Viaje(
+                                origen,
+                                destino,
+                                DatePickerIda.SelectedDate ?? fechaActual,
+                                DatePickerVuelta.SelectedDate ?? fechaActual,
+                                (Enumerados.TipoHotel)ComboBoxTipoHotel.SelectedItem,
+                                (Enumerados.TipoTransporte)ComboBoxTipoTransporte.SelectedItem,
+                                Enumerados.EstadoViaje.Abierto
+                            );
+                            MessageBox.Show("Se ha añadido el viaje exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("La fecha de vuelta no puede ser anterior a la fecha de ida.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las fechas no pueden ser anteriores al día actual.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione valores válidos para Origen y Destino", "Warning");
+                    MessageBox.Show("Seleccione valores válidos para Origen y Destino", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Para añadir el viaje debe rellenar todos los campos", "Warning");
+                MessageBox.Show("Para añadir el viaje debe rellenar todos los campos", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -105,7 +113,12 @@ namespace Proyecto_Final
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea cancelar la operación?", "Aviso", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }

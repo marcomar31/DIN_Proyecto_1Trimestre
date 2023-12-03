@@ -63,6 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Ventanas\CambiarEstadoViajeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\ViajesClienteWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,7 +79,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ventanas\GestionClientes.xaml">
+    <Page Include="Ventanas\GestionarClientesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,6 +93,9 @@
     <Compile Include="Modelo\Viaje.cs" />
     <Compile Include="Ventanas\AgregarViajeWindow.xaml.cs">
       <DependentUpon>AgregarViajeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\CambiarEstadoViajeWindow.xaml.cs">
+      <DependentUpon>CambiarEstadoViajeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\ViajesClienteWindow.xaml.cs">
       <DependentUpon>ViajesClienteWindow.xaml</DependentUpon>
@@ -104,11 +111,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Enumerados\LetraDNI.cs" />
-    <Compile Include="Modelo\DNIUtil.cs" />
+    <Compile Include="Servicios\DNIUtil.cs" />
     <Compile Include="Enumerados\EstadoViaje.cs" />
     <Compile Include="Modelo\Cliente.cs" />
-    <Compile Include="Ventanas\GestionClientes.xaml.cs">
-      <DependentUpon>GestionClientes.xaml</DependentUpon>
+    <Compile Include="Ventanas\GestionarClientesWindow.xaml.cs">
+      <DependentUpon>GestionarClientesWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

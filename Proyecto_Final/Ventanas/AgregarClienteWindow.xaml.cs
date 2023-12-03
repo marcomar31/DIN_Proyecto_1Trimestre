@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Proyecto_Final.Modelo;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Proyecto_Final
 {
@@ -19,11 +8,13 @@ namespace Proyecto_Final
     /// </summary>
     public partial class AgregarClienteWindow : Window
     {
+        private readonly DNIUtil DNIUtil;
         public Cliente NuevoCliente { get; private set; }
 
         public AgregarClienteWindow()
         {
             InitializeComponent();
+            DNIUtil = new DNIUtil();
         }
 
         private bool camposRellenos()
@@ -47,27 +38,41 @@ namespace Proyecto_Final
         {
             if (camposRellenos())
             {
-                NuevoCliente = new Cliente(
-                    tbDni.Text,
-                    tbNombre.Text,
-                    tbApellido1.Text,
-                    tbApellido2.Text,
-                    tbEmail.Text,
-                    checkbxDadoAlta.IsChecked ?? false
-                );
-                Close();
+                if (DNIUtil.DNICorrecto(tbDni.Text))
+                {
+                    if (tbEmail.Text.Contains("@"))
+                    {
+                        NuevoCliente = new Cliente(
+                            tbDni.Text,
+                            tbNombre.Text,
+                            tbApellido1.Text,
+                            tbApellido2.Text,
+                            tbEmail.Text,
+                            checkbxDadoAlta.IsChecked ?? false
+                        );
+                        MessageBox.Show("Se ha creado el nuevo cliente exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                        Close();
+                    } else
+                    {
+                        MessageBox.Show("El campo \"Email\" debe contener el caracter \"@\"", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Para añadir el cliente deberá rellenar todos los campos", "Warning");
+                MessageBox.Show("Para añadir el cliente deberá rellenar todos los campos", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            
         }
 
-        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea cancelar la operación?", "Aviso", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Close();
+            }
         }
     }
 
