@@ -60,7 +60,7 @@ namespace Proyecto_Final
                 {
                     DateTime fechaActual = DateTime.Now;
 
-                    if (DatePickerVuelta.SelectedDate >= fechaActual && DatePickerIda.SelectedDate >= fechaActual)
+                    if (DatePickerVuelta.SelectedDate > fechaActual.AddDays(-1) && DatePickerIda.SelectedDate > fechaActual.AddDays(-1))
                     {
                         if (DatePickerVuelta.SelectedDate > DatePickerIda.SelectedDate)
                         {
@@ -73,6 +73,7 @@ namespace Proyecto_Final
                                 (Enumerados.TipoTransporte)ComboBoxTipoTransporte.SelectedItem,
                                 Enumerados.EstadoViaje.Abierto
                             );
+                            MessageBox.Show("Se ha añadido el viaje exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                             Close();
                         }
                         else

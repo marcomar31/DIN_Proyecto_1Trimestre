@@ -57,24 +57,30 @@ namespace Proyecto_Final
                         Cliente.Apellido2 = tbApellido2.Text;
                         Cliente.Email = tbEmail.Text;
                         Cliente.DadoAlta = checkbxDadoAlta.IsChecked ?? false;
+
+                        MessageBox.Show("Se ha editado el cliente exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                         Close();
-                    }
-                    else
+                    } else
                     {
-                        MessageBox.Show("El campo \"Email\" debe contener el caracter \"@\"", "Warning");
+                        MessageBox.Show("El campo \"Email\" debe contener el caracter \"@\"", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Para añadir el cliente deberá rellenar todos los campos", "Warning");
+                MessageBox.Show("Para guardar los cambios del cliente deberá rellenar todos los campos", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }            
         }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea cancelar la operación?", "Aviso", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }

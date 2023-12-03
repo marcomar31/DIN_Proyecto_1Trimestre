@@ -74,18 +74,18 @@ namespace Proyecto_Final.Modelo
                     }
                     else
                     {
-                        MessageBox.Show("Asegúrese de que el DNI/NIF \"" + dniSinLetra + "\" y la letra \"" + letraDni + "\" son correspondientes", "Valores introducidos no válidos");
+                        MessageBox.Show("Asegúrese de que el DNI/NIF \"" + dniSinLetra + "\" y la letra \"" + letraDni + "\" son correspondientes", "Valores introducidos no válidos", MessageBoxButton.OK, MessageBoxImage.Warning);
                         return false;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El campo \"DNI/NIF\" debe tener el formato 12345678A", "Valores introducidos no válidos");
+                    MessageBox.Show("El campo \"DNI/NIF\" debe tener el formato 12345678A", "Valores introducidos no válidos", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return false;
                 }
             } else
             {
-                MessageBox.Show("El campo \"DNI/NIF\" debe tener una longitud de 9 caracteres", "Valores introducidos no válidos");
+                MessageBox.Show("El campo \"DNI/NIF\" debe tener una longitud de 9 caracteres", "Valores introducidos no válidos", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
         }

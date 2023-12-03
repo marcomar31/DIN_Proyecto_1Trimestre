@@ -1,5 +1,6 @@
 ﻿using Proyecto_Final.Enumerados;
 using Proyecto_Final.Modelo;
+using Proyecto_Final.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -122,15 +123,54 @@ namespace Proyecto_Final
                 Viaje ViajeSeleccionado = (Viaje)ListViewViajes.SelectedItem;
                 if (ViajeSeleccionado != null)
                 {
-                    ListaViajes.Remove(ViajeSeleccionado);
+                    MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea eliminar el viaje seleccionado?", "Aviso", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        ListaViajes.Remove(ViajeSeleccionado);
+                        MessageBox.Show("Se ha eliminado el viaje exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se ha cancelado la eliminación del viaje", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Para eliminar un viaje, deberá seleccionar el viaje en la tabla", "Warning");
+                    MessageBox.Show("Para eliminar un viaje, deberá seleccionar el viaje en la tabla", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             } else
             {
-                MessageBox.Show("Error al intentar eliminar el viaje. No hay viajes asociados a este usuario", "Error");
+                MessageBox.Show("Error al intentar eliminar el viaje. No hay viajes asociados a este usuario", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnCambiarEstadoViaje_Click(object sender, RoutedEventArgs e)
+        {
+            Viaje ViajeSeleccionado= (Viaje)ListViewViajes.SelectedItem;
+
+            if (ViajeSeleccionado != null)
+            {
+                CambiarEstadoViajeWindow VentanaEstado = new CambiarEstadoViajeWindow(ViajeSeleccionado);
+                VentanaEstado.ShowDialog();
+                EstadoViaje EstadoSeleccionado = VentanaEstado.EstadoSeleccionado;
+                CambiaEstadoViaje(ViajeSeleccionado, EstadoSeleccionado);
+            } else
+            {
+                MessageBox.Show("Para cambiar el estado de un viaje, deberá seleccionar el viaje en la tabla", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void CambiaEstadoViaje(Viaje ViajeSeleccionado, EstadoViaje NuevoEstado)
+        {
+            ViajeSeleccionado.EstadoViaje = NuevoEstado;
+            if (ListaViajes is ObservableCollection<Viaje> observableLista)
+            {
+                int index = observableLista.IndexOf(ViajeSeleccionado);
+                if (index != -1)
+                {
+                    observableLista[index] = ViajeSeleccionado;
+                }
             }
         }
     }

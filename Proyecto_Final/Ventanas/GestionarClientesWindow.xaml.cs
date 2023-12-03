@@ -8,11 +8,11 @@ using System.Windows;
 
 namespace Proyecto_Final
 {
-    public partial class GestionClientes : Window
+    public partial class GestionarClientesWindow : Window
     {
         public ObservableCollection<Cliente> ListaClientes { get; set; }
 
-        public GestionClientes()
+        public GestionarClientesWindow()
         {
             InitializeComponent();
             ListaClientes = new ObservableCollection<Cliente>(ObtenerClientes());
@@ -21,16 +21,16 @@ namespace Proyecto_Final
 
         private List<Cliente> ObtenerClientes()
         {
-            Cliente cliente1 = new Cliente("00000000A", "Juan", "Pérez", "Cuadrado", "email@mail.com", true);
-            Cliente cliente2 = new Cliente("00000001B", "María", "Gómez", "Núñez", "email2@mail.com", true);
-            Cliente cliente3 = new Cliente("00000002C", "Luis", "Martínez", "Hernández", "email3@mail.com", false);
-            Cliente cliente4 = new Cliente("00000003D", "Laura", "Fernández", "García", "email4@mail.com", false);
-            Cliente cliente5 = new Cliente("00000004E", "Carlos", "Gutiérrez", "Sánchez", "email5@mail.com", true);
-            Cliente cliente6 = new Cliente("00000005F", "Ana", "Díaz", "López", "email6@mail.com", false);
-            Cliente cliente7 = new Cliente("00000006G", "Pedro", "Ramírez", "Jiménez", "email7@mail.com", true);
-            Cliente cliente8 = new Cliente("00000007H", "Elena", "Muñoz", "Rodríguez", "email8@mail.com", false);
-            Cliente cliente9 = new Cliente("00000008I", "Miguel", "Serrano", "Vega", "email9@mail.com", true);
-            Cliente cliente10 = new Cliente("00000009J", "Sofía", "Ortega", "Soto", "email10@mail.com", false);
+            Cliente cliente1 = new Cliente("24252342S", "Juan", "Pérez", "Cuadrado", "email@mail.com", true);
+            Cliente cliente2 = new Cliente("24572342Q", "María", "Gómez", "Núñez", "email2@mail.com", true);
+            Cliente cliente3 = new Cliente("01236546C", "Luis", "Martínez", "Hernández", "email3@mail.com", false);
+            Cliente cliente4 = new Cliente("04567645Y", "Laura", "Fernández", "García", "email4@mail.com", false);
+            Cliente cliente5 = new Cliente("00043785Q", "Carlos", "Gutiérrez", "Sánchez", "email5@mail.com", true);
+            Cliente cliente6 = new Cliente("03124645A", "Ana", "Díaz", "López", "email6@mail.com", false);
+            Cliente cliente7 = new Cliente("45364532E", "Pedro", "Ramírez", "Jiménez", "email7@mail.com", true);
+            Cliente cliente8 = new Cliente("00235456M", "Elena", "Muñoz", "Rodríguez", "email8@mail.com", false);
+            Cliente cliente9 = new Cliente("02346546V", "Miguel", "Serrano", "Vega", "email9@mail.com", true);
+            Cliente cliente10 = new Cliente("24675854M", "Sofía", "Ortega", "Soto", "email10@mail.com", false);
 
             cliente1.Viajes.Add(new Viaje(Ciudades.Cracovia, Ciudades.Barcelona, DateTime.Now.AddDays(19), DateTime.Now.AddDays(25), TipoHotel.Lujoso, TipoTransporte.Combinado, EstadoViaje.Cancelado));
             cliente4.Viajes.Add(new Viaje(Ciudades.Atenas, Ciudades.Viena, DateTime.Now.AddDays(14), DateTime.Now.AddDays(17), TipoHotel.Estandar, TipoTransporte.Avion, EstadoViaje.Cerrado));
@@ -82,7 +82,16 @@ namespace Proyecto_Final
             Cliente clienteSeleccionado = (Cliente)lvClientes.SelectedItem;
             if (clienteSeleccionado != null)
             {
-                ListaClientes.Remove(clienteSeleccionado);
+                MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea eliminar el cliente seleccionado?", "Aviso", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    ListaClientes.Remove(clienteSeleccionado);
+                    MessageBox.Show("Se ha eliminado el cliente exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                } else
+                {
+                    MessageBox.Show("Se ha cancelado la eliminación del cliente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             } else
             {
                 MessageBox.Show("Para eliminar un cliente, deberá seleccionar el cliente en la tabla", "Warning");
@@ -99,7 +108,7 @@ namespace Proyecto_Final
                 ventanaEditarCliente.ShowDialog();
             } else
             {
-                MessageBox.Show("Para editar un cliente, deberá seleccionar el cliente en la tabla", "Warning");
+                MessageBox.Show("Para editar un cliente, deberá seleccionar el cliente en la tabla", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -113,7 +122,7 @@ namespace Proyecto_Final
                 ventanaEditarCliente.ShowDialog();
             } else
             {
-                MessageBox.Show("Para ver los viajes de un cliente, deberá seleccionar el cliente en la tabla", "Warning");
+                MessageBox.Show("Para ver los viajes de un cliente, deberá seleccionar el cliente en la tabla", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }
