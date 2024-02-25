@@ -125,5 +125,18 @@ namespace Proyecto_Final
                 MessageBox.Show("Para ver los viajes de un cliente, deberá seleccionar el cliente en la tabla", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+        private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea cerrar sesión?", "Aviso", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindow subWindow = new MainWindow();
+                subWindow.Show();
+                this.Close();
+                MessageBox.Show("Se ha cerrado la sesión exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
     }
 }

@@ -33,7 +33,7 @@
 
 
             <Grid Margin="18,0,18,35" VerticalAlignment="Bottom">
-                <Button x:Name="btnAniadirCliente" Content="Nuevo cliente" Height="34" Width="120" Click="BtnAniadirCliente_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,480,0">
+                <Button x:Name="btnAniadirCliente" Content="Nuevo cliente" Height="34" Width="120" Click="BtnAniadirCliente_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,520,0">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Template">
@@ -48,7 +48,7 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button x:Name="btnEditarCliente" Content="Editar cliente" Margin="0,0,160,0" Height="34" Width="120" Click="BtnEditarCliente_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="btnEditarCliente" Content="Editar cliente" Margin="0,0,260,0" Height="34" Width="120" Click="BtnEditarCliente_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Template">
@@ -63,7 +63,7 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button x:Name="btnEliminarCliente" Content="Eliminar cliente" Margin="160,0,0,0" Height="34" Width="120" Click="BtnEliminarCliente_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="btnEliminarCliente" Content="Eliminar cliente" Margin="0,0,0,0" Height="34" Width="120" Click="BtnEliminarCliente_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Template">
@@ -78,7 +78,22 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button x:Name="btnDetallesCliente" Content="Viajes cliente" Margin="480,0,0,0" Height="34" Width="120" Click="BtnDetallesCliente_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="btnDetallesCliente" Content="Viajes cliente" Margin="260,0,0,0" Height="34" Width="120" Click="BtnDetallesCliente_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button x:Name="btnCerrarSesion" Content="Cerrar sesión" Margin="520,0,0,0" Height="34" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BtnCerrarSesion_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Template">
