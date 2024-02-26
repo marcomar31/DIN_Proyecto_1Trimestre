@@ -1,6 +1,7 @@
 ﻿using Proyecto_Final.Modelo;
 using System;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Proyecto_Final
 {
@@ -15,6 +16,16 @@ namespace Proyecto_Final
         {
             InitializeComponent();
             dniUtil = new DNIUtil();
+
+            KeyDown += MainWindow_KeyDown;
+        }
+
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnAcceder_Click(sender, e);
+            }
         }
 
         private void btnAcceder_Click(object sender, RoutedEventArgs e)
