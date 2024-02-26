@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Componentes\ComponentePersonalizado_Cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\ViajesClienteWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,6 +100,9 @@
     </Compile>
     <Compile Include="Ventanas\CambiarEstadoViajeWindow.xaml.cs">
       <DependentUpon>CambiarEstadoViajeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\ComponentePersonalizado_Cliente.xaml.cs">
+      <DependentUpon>ComponentePersonalizado_Cliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\ViajesClienteWindow.xaml.cs">
       <DependentUpon>ViajesClienteWindow.xaml</DependentUpon>

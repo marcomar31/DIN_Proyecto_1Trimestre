@@ -15,25 +15,28 @@ namespace Proyecto_Final
             DNIUtil = new DNIUtil();
             Cliente = clienteSeleccionado;
             LoadCliente();
+
+            componenteCliente.AceptarClick += OnAceptarClicked;
+            componenteCliente.CancelarClick += OnCancelarClicked;
         }
 
         private void LoadCliente()
         {
-            tbDni.Text = Cliente.Dni;
-            tbNombre.Text = Cliente.Nombre;
-            tbApellido1.Text = Cliente.Apellido1;
-            tbApellido2.Text = Cliente.Apellido2;
-            tbEmail.Text = Cliente.Email;
-            checkbxDadoAlta.IsChecked = Cliente.DadoAlta;
+            componenteCliente.tbDni.Text = Cliente.Dni;
+            componenteCliente.tbNombre.Text = Cliente.Nombre;
+            componenteCliente.tbApellido1.Text = Cliente.Apellido1;
+            componenteCliente.tbApellido2.Text = Cliente.Apellido2;
+            componenteCliente.tbEmail.Text = Cliente.Email;
+            componenteCliente.checkbxDadoAlta.IsChecked = Cliente.DadoAlta;
         }
 
         private bool camposRellenos()
         {
-            if (string.IsNullOrWhiteSpace(tbDni.Text) ||
-                string.IsNullOrWhiteSpace(tbNombre.Text) ||
-                string.IsNullOrWhiteSpace(tbApellido1.Text) ||
-                string.IsNullOrWhiteSpace(tbApellido2.Text) ||
-                string.IsNullOrWhiteSpace(tbEmail.Text))
+            if (string.IsNullOrWhiteSpace(componenteCliente.tbDni.Text) ||
+                string.IsNullOrWhiteSpace(componenteCliente.tbNombre.Text) ||
+                string.IsNullOrWhiteSpace(componenteCliente.tbApellido1.Text) ||
+                string.IsNullOrWhiteSpace(componenteCliente.tbApellido2.Text) ||
+                string.IsNullOrWhiteSpace(componenteCliente.tbEmail.Text))
             {
                 return false;
             }
@@ -43,20 +46,20 @@ namespace Proyecto_Final
             }
         }
 
-        private void BtnAceptar_Click(object sender, RoutedEventArgs e)
+        private void OnAceptarClicked(object sender, RoutedEventArgs e)
         {
             if (camposRellenos())
             {
-                if (DNIUtil.DNICorrecto(tbDni.Text))
+                if (DNIUtil.DNICorrecto(componenteCliente.tbDni.Text))
                 {
-                    if (tbEmail.Text.Contains("@"))
+                    if (componenteCliente.tbEmail.Text.Contains("@"))
                     {
-                        Cliente.Dni = tbDni.Text;
-                        Cliente.Nombre = tbNombre.Text;
-                        Cliente.Apellido1 = tbApellido1.Text;
-                        Cliente.Apellido2 = tbApellido2.Text;
-                        Cliente.Email = tbEmail.Text;
-                        Cliente.DadoAlta = checkbxDadoAlta.IsChecked ?? false;
+                        Cliente.Dni = componenteCliente.tbDni.Text;
+                        Cliente.Nombre = componenteCliente.tbNombre.Text;
+                        Cliente.Apellido1 = componenteCliente.tbApellido1.Text;
+                        Cliente.Apellido2 = componenteCliente.tbApellido2.Text;
+                        Cliente.Email = componenteCliente.tbEmail.Text;
+                        Cliente.DadoAlta = componenteCliente.checkbxDadoAlta.IsChecked ?? false;
 
                         MessageBox.Show("Se ha editado el cliente exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                         Close();
@@ -73,7 +76,7 @@ namespace Proyecto_Final
             }            
         }
 
-        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        private void OnCancelarClicked(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea cancelar la operación?", "Aviso", MessageBoxButton.YesNo, MessageBoxImage.Question);
 

@@ -3,9 +3,6 @@ using System.Windows;
 
 namespace Proyecto_Final
 {
-    /// <summary>
-    /// Lógica de interacción para AgregarCLienteWindow.xaml
-    /// </summary>
     public partial class AgregarClienteWindow : Window
     {
         private readonly DNIUtil DNIUtil;
@@ -15,15 +12,18 @@ namespace Proyecto_Final
         {
             InitializeComponent();
             DNIUtil = new DNIUtil();
+
+            componenteCliente.AceptarClick += OnAceptarClicked;
+            componenteCliente.CancelarClick += OnCancelarClicked;
         }
 
         private bool camposRellenos()
         {
-            if (string.IsNullOrWhiteSpace(tbDni.Text) ||
-                string.IsNullOrWhiteSpace(tbNombre.Text) ||
-                string.IsNullOrWhiteSpace(tbApellido1.Text) ||
-                string.IsNullOrWhiteSpace(tbApellido2.Text) || 
-                string.IsNullOrWhiteSpace(tbEmail.Text)) 
+            if (string.IsNullOrWhiteSpace(componenteCliente.tbDni.Text) ||
+                string.IsNullOrWhiteSpace(componenteCliente.tbNombre.Text) ||
+                string.IsNullOrWhiteSpace(componenteCliente.tbApellido1.Text) ||
+                string.IsNullOrWhiteSpace(componenteCliente.tbApellido2.Text) ||
+                string.IsNullOrWhiteSpace(componenteCliente.tbEmail.Text))
             {
                 return false;
             }
@@ -33,26 +33,26 @@ namespace Proyecto_Final
             }
         }
 
-
-        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        private void OnAceptarClicked(object sender, RoutedEventArgs e)
         {
             if (camposRellenos())
             {
-                if (DNIUtil.DNICorrecto(tbDni.Text))
+                if (DNIUtil.DNICorrecto(componenteCliente.tbDni.Text))
                 {
-                    if (tbEmail.Text.Contains("@"))
+                    if (componenteCliente.tbEmail.Text.Contains("@"))
                     {
                         NuevoCliente = new Cliente(
-                            tbDni.Text,
-                            tbNombre.Text,
-                            tbApellido1.Text,
-                            tbApellido2.Text,
-                            tbEmail.Text,
-                            checkbxDadoAlta.IsChecked ?? false
+                            componenteCliente.tbDni.Text,
+                            componenteCliente.tbNombre.Text,
+                            componenteCliente.tbApellido1.Text,
+                            componenteCliente.tbApellido2.Text,
+                            componenteCliente.tbEmail.Text,
+                            componenteCliente.checkbxDadoAlta.IsChecked ?? false
                         );
                         MessageBox.Show("Se ha creado el nuevo cliente exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                         Close();
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("El campo \"Email\" debe contener el caracter \"@\"", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
@@ -65,7 +65,7 @@ namespace Proyecto_Final
             }
         }
 
-        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        private void OnCancelarClicked(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea cancelar la operación?", "Aviso", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
@@ -75,5 +75,4 @@ namespace Proyecto_Final
             }
         }
     }
-
 }
