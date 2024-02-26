@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Proyecto_Final.Componentes.ComponentePersonalizado_Cliente"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Resources>
+            <BitmapImage x:Key="Favicon" UriSource="/Favicon_Maleta_SinFondo.png"/>
+        </Grid.Resources>
+
+        <Viewbox MaxHeight="750" MaxWidth="800">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="318" Width="564">
+            <Border CornerRadius="15" Background="White" Margin="10,10,10,60">
+                <Grid>
+                    <Label Content="{Binding Titulo, RelativeSource={RelativeSource AncestorType=UserControl}}" HorizontalAlignment="Center" FontWeight="Bold" FontSize="30" Width="436" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFE4714C" VerticalAlignment="Top"/>
+                    <Label Content="DNI/NIF" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Margin="35,-115,0,0" FontSize="14"/>
+                    <TextBox x:Name="tbDni" HorizontalAlignment="Left" Margin="35,-60,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Nombre" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="35,55,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Primer Apellido" HorizontalAlignment="Right" Margin="0,-115,97,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBox x:Name="tbApellido1" HorizontalAlignment="Right" Margin="0,-60,35,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Segundo Apellido" HorizontalAlignment="Right" Margin="0,0,83,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBox x:Name="tbApellido2" HorizontalAlignment="Right" Margin="0,55,35,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="35,115,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Margin="35,170,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="176" Height="24" VerticalContentAlignment="Center"/>
+                    <CheckBox x:Name="checkbxDadoAlta" Content="Dar de alta" Margin="0,181,35,0" VerticalAlignment="Top" Height="36" Width="158" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" IsChecked="True" HorizontalAlignment="Right"/>
+                </Grid>
+            </Border>
+            <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="-200,260,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="OnAceptarClicked">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="200,260,0,0" VerticalAlignment="Center" Height="40" Width="130" Click="OnCancelarClicked">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Viewbox>
+    </Grid>
+</UserControl>

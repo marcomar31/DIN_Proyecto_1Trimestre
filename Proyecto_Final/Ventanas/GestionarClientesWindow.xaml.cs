@@ -134,7 +134,7 @@ namespace Proyecto_Final
             {
                 MainWindow subWindow = new MainWindow();
                 subWindow.Show();
-                this.Close();
+                Close();
                 MessageBox.Show("Se ha cerrado la sesión exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
