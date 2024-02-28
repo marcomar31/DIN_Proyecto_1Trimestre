@@ -1,5 +1,6 @@
 ﻿using Proyecto_Final.Enumerados;
 using Proyecto_Final.Modelo;
+using Proyecto_Final.Ventanas;
 using System;
 using System.Windows;
 
@@ -11,6 +12,7 @@ namespace Proyecto_Final
     public partial class AgregarViajeWindow : Window
     {
         public Viaje NuevoViaje { get; private set; }
+        public bool AgregadoExitoso { get; set; }
 
         public AgregarViajeWindow()
         {
@@ -18,6 +20,7 @@ namespace Proyecto_Final
             DatePickerIda.SelectedDate = DateTime.Now;
             DatePickerVuelta.SelectedDate = DateTime.Now.AddDays(7);
             CargarCBoxes();
+            AgregadoExitoso = false;
         }
 
         private void CargarCBoxes()
@@ -73,8 +76,20 @@ namespace Proyecto_Final
                                 (Enumerados.TipoTransporte)ComboBoxTipoTransporte.SelectedItem,
                                 Enumerados.EstadoViaje.Abierto
                             );
-                            MessageBox.Show("Se ha añadido el viaje exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-                            Close();
+
+                            PagoViajeWindow ventanaPagarViaje = new PagoViajeWindow(NuevoViaje);
+                            ventanaPagarViaje.ShowDialog();
+
+                            if (ventanaPagarViaje.PagoExitoso)
+                            {
+                                MessageBox.Show("Se ha añadido el viaje exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                                AgregadoExitoso = true;
+                                Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El pago no se realizó correctamente.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
                         }
                         else
                         {

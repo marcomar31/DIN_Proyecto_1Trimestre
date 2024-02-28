@@ -39,7 +39,7 @@ namespace Proyecto_Final
                     String dniSinLetra = dniUtil.getDniSinLetra(dniConLetra);
                     if (dniUtil.letraDniCorrecta(dniConLetra))
                     {
-                        iniciaSesion();
+                        IniciaSesion();
                     }
                     else
                     {
@@ -68,7 +68,7 @@ namespace Proyecto_Final
             }
         }
 
-        private void iniciaSesion()
+        private void IniciaSesion()
         {
             if (dniUtil.dniFormatoCorrecto(tbDni.Text))
             {
@@ -76,7 +76,7 @@ namespace Proyecto_Final
                 {
                     GestionarClientesWindow subWindow = new GestionarClientesWindow();
                     subWindow.Show();
-                    this.Close();
+                    Close();
                 }
                 else
                 {

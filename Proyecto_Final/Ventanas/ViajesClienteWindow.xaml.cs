@@ -105,7 +105,7 @@ namespace Proyecto_Final
             ventanaAgregarViaje.ShowDialog();
 
             Viaje nuevoViaje = ventanaAgregarViaje.NuevoViaje;
-            if (nuevoViaje != null)
+            if (ventanaAgregarViaje.AgregadoExitoso)
             {
                 ConjuntoViajes.Add(nuevoViaje);
                 ListaViajes.Add(nuevoViaje);
