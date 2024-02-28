@@ -60,6 +60,7 @@ namespace Proyecto_Final
                         Cliente.Apellido2 = componenteCliente.tbApellido2.Text;
                         Cliente.Email = componenteCliente.tbEmail.Text;
                         Cliente.DadoAlta = componenteCliente.checkbxDadoAlta.IsChecked ?? false;
+                        Cliente.DadoAltaString = Cliente.SetDadoAltaString();
 
                         MessageBox.Show("Se ha editado el cliente exitosamente", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                         Close();

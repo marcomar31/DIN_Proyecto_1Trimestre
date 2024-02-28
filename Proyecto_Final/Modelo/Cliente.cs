@@ -107,6 +107,20 @@ namespace Proyecto_Final
             }
         }
 
+        private String _dadoAltaString;
+        public String DadoAltaString
+        {
+            get { return _dadoAltaString; }
+            set
+            {
+                if (_dadoAltaString != value)
+                {
+                    _dadoAltaString = value;
+                    OnPropertyChanged(nameof(DadoAltaString));
+                }
+            }
+        }
+
         public String _descripcion;
         public String Descripcion {
             get { return _descripcion; }
@@ -130,6 +144,12 @@ namespace Proyecto_Final
             Viajes = new HashSet<Viaje>();
             DadoAlta = dadoAlta;
             Descripcion = "Gestión pendiente";
+            DadoAltaString = SetDadoAltaString();
+        }
+
+        public String SetDadoAltaString()
+        {
+            return DadoAlta ? "Sí" : "No";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

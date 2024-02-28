@@ -24,7 +24,7 @@
                                 <GridViewColumn Header="Primer Apellido" DisplayMemberBinding="{Binding Apellido1}" Width="140"/>
                                 <GridViewColumn Header="Segundo Apellido" DisplayMemberBinding="{Binding Apellido2}" Width="140"/>
                                 <GridViewColumn Header="Descripción" DisplayMemberBinding="{Binding Descripcion}" Width="140"/>
-                                <GridViewColumn Header="Dado de alta" DisplayMemberBinding="{Binding DadoAlta}" Width="140"/>
+                                <GridViewColumn Header="Dado de alta" DisplayMemberBinding="{Binding DadoAltaString}" Width="140"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
